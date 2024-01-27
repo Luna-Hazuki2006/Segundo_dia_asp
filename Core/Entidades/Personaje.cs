@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace Core.Entidades {
     public class Personaje
     {
@@ -16,6 +18,8 @@ namespace Core.Entidades {
         public float Fuerza {get; set;}
         public double Interligencia {get; set;}
         public double Agilidad {get; set;}
+        public Inventario InventarioData {get; set;}
+        public ArrayList Inventario {get; set;}
 
     }
 }
