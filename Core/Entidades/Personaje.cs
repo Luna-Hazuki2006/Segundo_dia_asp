@@ -11,6 +11,7 @@ namespace Core.Entidades {
         // public int Resistencia {get; set;}
         // public int Defensa {get; set;}
         // public double Experiencia {get; set;}
+        public int Id {get; set;}
         public string Nombre {get; set;}
         public int Nivel {get; set;}
         public double Salud {get; set;}

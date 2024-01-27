@@ -3,8 +3,8 @@ namespace Core.Repositorios {
     {
         ValueTask<TEntity> GetByIdAsync();
         Task<IEnumerable<TEntity>> GetAllAsync();
-        Task Remove(TEntity entidad);
-        Task RemoveRange(IEnumerable<TEntity> entidades);
+        void Remove(TEntity entidad);
+        void RemoveRange(IEnumerable<TEntity> entidades);
         Task Update(TEntity entidad);
         Task AddAsync(TEntity entidad);
     }
