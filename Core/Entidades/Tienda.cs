@@ -1,7 +1,6 @@
 using System.Collections;
-using Core.Entidades;
 
-namespace Core.Repositorios
+namespace Core.Entidades
 {
     public class Tienda
     {
