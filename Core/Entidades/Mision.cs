@@ -2,6 +2,7 @@ namespace Core.Entidades
 {
     public class Mision
     {
+        public int Id {get; set;}
         public string Nombre {get; set;}
         public string[] Objetivos {get; set;}
         public string[] Recompensas {get; set;}

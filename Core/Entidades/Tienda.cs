@@ -4,6 +4,7 @@ namespace Core.Entidades
 {
     public class Tienda
     {
+        public int Id {get; set;}
         public List<Objeto> Inventario_Tienda {get; set;}
         public ArrayList Precios {get; set;}
         public ArrayList Stock {get; set;}
