@@ -19,8 +19,7 @@ namespace Core.Entidades {
         public float Fuerza {get; set;}
         public double Interligencia {get; set;}
         public double Agilidad {get; set;}
-        public Inventario InventarioData {get; set;}
-        public ArrayList Inventario {get; set;}
+        public Inventario Inventario {get; set;}
 
     }
 }
