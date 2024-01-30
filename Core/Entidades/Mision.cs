@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace Core.Entidades
 {
     public class Mision
@@ -5,7 +7,7 @@ namespace Core.Entidades
         public int Id {get; set;}
         public string Nombre {get; set;}
         public string[] Objetivos {get; set;}
-        public string[] Recompensas {get; set;}
+        public ArrayList Recompensas {get; set;}
         public string Estado {get; set;}
     }
 }
