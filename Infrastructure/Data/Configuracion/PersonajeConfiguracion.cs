@@ -15,7 +15,13 @@ namespace Infrastructure.Data.Configuracion
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.Nombre).IsRequired().HasMaxLength(255);
-            // throw new NotImplementedException();
+            builder.Property(x => x.Nivel).IsRequired();
+            builder.Property(x => x.Salud).IsRequired();
+            builder.Property(x => x.Fuerza).IsRequired();
+            builder.Property(x => x.Agilidad).IsRequired();
+            builder.Property(x => x.Energia).IsRequired();
+            builder.Property(x => x.Inteligencia).IsRequired();
+            builder.Property(x => x.Inventario).IsRequired();
         }
     }
 }
