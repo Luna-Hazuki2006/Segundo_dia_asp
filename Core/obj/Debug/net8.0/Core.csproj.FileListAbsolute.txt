@@ -9,3 +9,4 @@ C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Core\obj\Debug\ne
 C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Core\obj\Debug\net8.0\refint\Core.dll
 C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Core\obj\Debug\net8.0\Core.pdb
 C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Core\obj\Debug\net8.0\ref\Core.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Core\obj\Debug\net8.0\Core.sourcelink.json

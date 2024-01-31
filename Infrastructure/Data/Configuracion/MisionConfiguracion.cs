@@ -18,6 +18,7 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Objetivos).IsRequired();
             builder.Property(x => x.Recompensas).IsRequired();
             builder.Property(x => x.Estado).IsRequired();
+            builder.ToTable("MisionesAna");
         }
     }
 }

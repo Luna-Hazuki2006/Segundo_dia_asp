@@ -18,6 +18,7 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Precios).IsRequired();
             builder.Property(x => x.Stock).IsRequired();
             builder.Property(x => x.Dinero_Tienda).IsRequired();
+            builder.ToTable("TiendasAna");
         }
     }
 }

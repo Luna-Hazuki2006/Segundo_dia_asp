@@ -17,6 +17,7 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Espacio_Disponible).IsRequired();
             builder.Property(x => x.Objetos).IsRequired();
             builder.Property(x => x.Peso_Total).IsRequired();
+            builder.ToTable("InventariosAna");
         }
     }
 }

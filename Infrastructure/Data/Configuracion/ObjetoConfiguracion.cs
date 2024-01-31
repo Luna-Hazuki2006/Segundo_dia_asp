@@ -18,6 +18,7 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Descripcion).IsRequired().HasMaxLength(255);
             builder.Property(x => x.Tipo).IsRequired();
             builder.Property(x => x.Valor).IsRequired();
+            builder.ToTable("ObjetosAna");
         }
     }
 }

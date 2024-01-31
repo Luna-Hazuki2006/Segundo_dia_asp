@@ -18,6 +18,7 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Intereses).IsRequired();
             builder.Property(x => x.Prestamos).IsRequired();
             builder.Property(x => x.Seguridad).IsRequired();
+            builder.ToTable("BancosAna");
         }
     }
 }
