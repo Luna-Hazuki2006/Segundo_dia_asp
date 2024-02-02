@@ -14,9 +14,23 @@ namespace Services.validators
                 .NotEmpty()
                 .MaximumLength(255);
             RuleFor(e => e.Nivel)
-                .LessThanOrEqualTo(100)
+                .LessThanOrEqualTo(99)
                 .GreaterThanOrEqualTo(Personaje => Personaje.Nivel);
-            
+            RuleFor(e => e.Salud)
+                .LessThanOrEqualTo(100)
+                .GreaterThanOrEqualTo(Personaje => Personaje.Salud);
+            RuleFor(e => e.Energia)
+                .LessThanOrEqualTo(100)
+                .GreaterThanOrEqualTo(Personaje => Personaje.Energia);
+            RuleFor(e => e.Fuerza)
+                .LessThanOrEqualTo(100)
+                .GreaterThanOrEqualTo(Personaje => Personaje.Fuerza);
+            RuleFor(e => e.Inteligencia)
+                .LessThanOrEqualTo(100)
+                .GreaterThanOrEqualTo(Personaje => Personaje.Inteligencia);
+            RuleFor(e => e.Agilidad)
+                .LessThanOrEqualTo(100)
+                .GreaterThanOrEqualTo(Personaje => Personaje.Agilidad);
         }
     }
 }
