@@ -9,6 +9,11 @@ namespace Services.validators
 {
     public class ObjetoValidacion : AbstractValidator<Objeto>
     {
-        
+        public ObjetoValidacion() {
+            RuleFor(e => e.Id);
+            RuleFor(e => e.Descripcion);
+            RuleFor(e => e.Valor);
+            RuleFor(e => e.Tipo);
+        }
     }
 }

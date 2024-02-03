@@ -31,6 +31,8 @@ namespace Services.validators
             RuleFor(e => e.Agilidad)
                 .LessThanOrEqualTo(100)
                 .GreaterThanOrEqualTo(Personaje => Personaje.Agilidad);
+            RuleFor(e => e.Inventario)
+                .NotNull();
         }
     }
 }

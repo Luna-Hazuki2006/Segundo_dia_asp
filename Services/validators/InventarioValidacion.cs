@@ -9,6 +9,11 @@ namespace Services.validators
 {
     public class InventarioValidacion : AbstractValidator<Inventario>
     {
-        
+        public InventarioValidacion() {
+            RuleFor(e => e.Id);
+            RuleFor(e => e.Espacio_Disponible);
+            RuleFor(e => e.Peso_Total);
+            RuleFor(e => e.Objetos);
+        }
     }
 }
