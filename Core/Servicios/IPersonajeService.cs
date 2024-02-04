@@ -6,7 +6,7 @@ namespace Core.Servicios
     {
         Task<Personaje> GetPersonajeById(int id);
         Task<IEnumerable<Personaje>> GetAll();
-        Task LeveUp(Personaje personaje);
+        Task LevelUp(Personaje personaje);
         Task LosingLife(Personaje personaje, double vida_perdida);
         Task GainingLife(Personaje personaje, double vida_ganada);
         Task UsingMagic(Personaje personaje, double magia);
