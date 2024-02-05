@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qjZFNYo7frR5Um0NV2TTL0SYxaT5sgYfArvlQqywmP3SiC9JofD8Ri2a5ItUnEobkI+Lsm4Djjs0C6WQrIsYdA==",
+  "dgSpecHash": "N9DoZbtzFHfGuu4ABSDlbWDHS89zRCM2ZxkpKVoAh/JDA7sVPqVWm1btz7+mGccn59qPzYuMLXSLCsFuwsdkcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Services\\Services.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\d\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Services\\Services.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
