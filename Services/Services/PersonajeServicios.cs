@@ -89,15 +89,10 @@ namespace Services.Services
             if (personaje.Experiencia >= (personaje.Nivel * 10))
             {
                 PersonajeToBeUpdated.Nivel = personaje.Nivel + 1;
+                PersonajeToBeUpdated.Fuerza = personaje.Fuerza + 10;
+                PersonajeToBeUpdated.Inteligencia = personaje.Inteligencia + 10.5;
+                PersonajeToBeUpdated.Agilidad = personaje.Agilidad + 7.5;
             }
-
-            // PersonajeToBeUpdated.Defensa = personaje.Defensa;
-            // PersonajeToBeUpdated.Resistencia = personaje.Resistencia;
-            // PersonajeToBeUpdated.Experiencia = personaje.Experiencia;
-            // PersonajeToBeUpdated.estamina = personaje.estamina;
-            // PersonajeToBeUpdated.Fuerza = personaje.Fuerza;
-            // PersonajeToBeUpdated.Inteligencia = personaje.Inteligencia;
-            // PersonajeToBeUpdated.Nivel = personaje.Nivel;
 
             await _unitOfWork.CommitAsync();
 

@@ -5,6 +5,7 @@ namespace Core.Entidades
         public  int Id {get; set;}
         public string Nombre {get; set;}
         public int Nivel_Amenaza {get; set;}
+        public double Vida {get; set;}
         public string[] Recompensas {get; set;}
         public string[] Habilidades {get; set;}
     }
