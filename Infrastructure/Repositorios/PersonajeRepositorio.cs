@@ -9,5 +9,10 @@ namespace Infrastructure.Repositorios
         public PersonajeRepositorio(AppDbContext context) : base(context) {
 
         }
+
+        public virtual async Task LevelUp(Personaje personaje) {
+            dbSet.Attach(personaje);
+            Context.Entry(personaje).State = personaje.Modified;
+        }
     }
 }

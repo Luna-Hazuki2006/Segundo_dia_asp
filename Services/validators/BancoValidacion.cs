@@ -10,7 +10,9 @@ namespace Services.validators
     public class BancoValidacion : AbstractValidator<Banco>
     {
         public BancoValidacion() {
-            RuleFor(e => e.Id);
+            RuleFor(e => e.Id)
+                .NotNull()
+                .GreaterThanOrEqualTo(1);
             RuleFor(e => e.Cuenta_Bacaria);
             RuleFor(e => e.Seguridad);
             RuleFor(e => e.Intereses);

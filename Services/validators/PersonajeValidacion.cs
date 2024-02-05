@@ -10,6 +10,9 @@ namespace Services.validators
     public class PersonajeValidacion : AbstractValidator<Personaje>
     {
         public PersonajeValidacion() {
+            RuleFor(e => e.Id)
+                .NotNull()
+                .GreaterThanOrEqualTo(1);
             RuleFor(e => e.Nombre)
                 .NotEmpty()
                 .MaximumLength(255);
