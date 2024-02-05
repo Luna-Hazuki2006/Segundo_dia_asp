@@ -8,6 +8,8 @@ namespace Core.Servicios
 {
     public interface IObjetoService
     {
+        Task<Objeto> GetObjetoById(int id);
+        Task<IEnumerable<Objeto>> GetAll();
         Task ChangingValue(Objeto objeto, double valor);
     }
 }

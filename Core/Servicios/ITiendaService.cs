@@ -8,8 +8,8 @@ namespace Core.Servicios
 {
     public interface ITiendaService
     {
-        Task<Objeto> GetObjetoById(int id);
-        Task<IEnumerable<Objeto>> GetAll();
+        Task<Tienda> GetTiendaById(int id);
+        Task<IEnumerable<Tienda>> GetAll();
         Task BuyingObjects(Tienda tienda, Personaje personaje, Objeto objeto);
     }
 }
