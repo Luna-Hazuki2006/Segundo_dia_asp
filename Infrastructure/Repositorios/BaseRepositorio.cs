@@ -13,34 +13,52 @@ namespace Infrastructure.Repositorios
         internal AppDbContext Context;
         internal DbSet<TEntity> dbSet;
 
-        public Task AddAsync(TEntity entidad)
+        public BaseRepository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            this.Context = context;
+            this.dbSet = context.Set<TEntity>();
         }
 
-        public Task<IEnumerable<TEntity>> GetAllAsync()
+        public virtual async ValueTask<TEntity> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await dbSet.FindAsync(id);
         }
 
-        public ValueTask<TEntity> GetByIdAsync()
+        public virtual async ValueTask<TEntity> GetByIdAsync(int id, string nombre)
         {
-            throw new NotImplementedException();
+            return await dbSet.FindAsync(id);
         }
 
-        public void Remove(TEntity entidad)
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await dbSet.ToListAsync();
         }
 
-        public void RemoveRange(IEnumerable<TEntity> entidades)
+        public virtual async void Remove(TEntity entity)
         {
-            throw new NotImplementedException();
+            dbSet.Remove(entity);
         }
 
-        public Task Update(TEntity entidad)
+        public virtual async void RemoveRange(IEnumerable<TEntity> entities)
         {
-            throw new NotImplementedException();
+            dbSet.RemoveRange(entities);
+        }
+
+        public virtual async Task Update(TEntity entityToUpdate)
+        {
+            dbSet.Attach(entityToUpdate);
+            Context.Entry(entityToUpdate).State = EntityState.Modified;
+        }
+
+        public virtual async Task UpdateRange(IEnumerable<TEntity> entitiesToUpdate)
+        {
+            dbSet.AttachRange(entitiesToUpdate);
+            Context.Entry(entitiesToUpdate).State = EntityState.Modified;
+        }
+
+        public virtual async Task AddAsync(TEntity entity)
+        {
+            await dbSet.AddAsync(entity);
         }
     }
 }
