@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Servicios
 {
-    public class IMisionService
+    public interface IMisionService
     {
         
     }

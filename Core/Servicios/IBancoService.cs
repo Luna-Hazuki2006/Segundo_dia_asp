@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Core.Servicios
 {
-    public class IBancoService
+    public interface IBancoService
     {
         
     }
