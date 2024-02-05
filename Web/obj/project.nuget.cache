@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BFlchI+lGWU4g48qB7yCXfCGiWsmtJ8Tw9Rr5mGnfWZiko5q2grE/9dju/aWqgnyUbMMBpGzKS6s60dbMkbA7A==",
+  "dgSpecHash": "ZNH0/WrcouNx2GjWXf4VeKcEkJyRDvxLNSnpZxRgbmO45jcYstK+NH31z/qKcclVH6kBBg5ILH+7E3h+SXk02w==",
   "success": true,
   "projectFilePath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Web\\Web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\d\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
     "C:\\Users\\d\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.1\\microsoft.aspnetcore.openapi.8.0.1.nupkg.sha512",
     "C:\\Users\\d\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\d\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
