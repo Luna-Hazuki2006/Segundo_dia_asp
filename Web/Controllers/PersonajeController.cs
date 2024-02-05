@@ -59,10 +59,10 @@ namespace Web.Controllers
         {
             try
             {
-                var createdPersonaje =
-                    await _servicio.CreatePersonaje(personaje);
+                var updatedPersonaje =
+                    await _servicio.UpdatePersonaje(personaje);
 
-                return Ok(createdPersonaje);
+                return Ok(updatedPersonaje);
             }
             catch (Exception ex)
             {

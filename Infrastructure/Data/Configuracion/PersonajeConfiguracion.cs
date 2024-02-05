@@ -22,6 +22,9 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Energia).IsRequired();
             builder.Property(x => x.Inteligencia).IsRequired();
             builder.Property(x => x.Inventario).IsRequired();
+            builder.Property(x => x.Defensa).IsRequired();
+            builder.Property(x => x.Resistencia).IsRequired();
+            builder.Property(x => x.Experiencia).IsRequired();
             builder.ToTable("PersonajesAna");
         }
     }
