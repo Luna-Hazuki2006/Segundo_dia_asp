@@ -10,6 +10,9 @@ namespace Core.Servicios
     {
         Task<Tienda> GetTiendaById(int id);
         Task<IEnumerable<Tienda>> GetAll();
+        Task<Tienda> CreateTienda(Tienda Tienda);
+        Task<Tienda> UpdateTienda(int id, Tienda Tienda);
+        Task DeleteTienda(int id);
         Task BuyingObjects(Tienda tienda, Personaje personaje, Objeto objeto);
     }
 }

@@ -1,6 +1,6 @@
 using Core.Entidades;
 
-namespace Core.Repositorios {
+namespace Core.Interfaces.Repositorios {
     public interface IPersonajeRepositorio : IBaseRepositorio<Personaje>
     {
         Task ModifyLevel(Personaje personaje);

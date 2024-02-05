@@ -10,6 +10,9 @@ namespace Core.Servicios
     {
         Task<Banco> GetBancoById(int id);
         Task<IEnumerable<Banco>> GetAll();
+        Task<Banco> CreateBanco(Banco Banco);
+        Task<Banco> UpdateBanco(int id, Banco Banco);
+        Task DeleteBanco(int id);
         Task DepositingMoney(Personaje personaje, Banco banco, double cantidad);
         Task TakingMoney(Personaje personaje, Banco banco, double cantidad);
     }

@@ -10,6 +10,9 @@ namespace Core.Servicios
     {
         Task<Objeto> GetObjetoById(int id);
         Task<IEnumerable<Objeto>> GetAll();
+        Task<Objeto> CreateObjeto(Objeto Objeto);
+        Task<Objeto> UpdateObjeto(int id, Objeto Objeto);
+        Task DeleteObjeto(int id);
         Task ChangingValue(Objeto objeto, double valor);
     }
 }

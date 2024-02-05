@@ -1,4 +1,4 @@
-namespace Core.Repositorios 
+namespace Core.Interfaces.Repositorios 
 {
     public interface IBaseRepositorio<TEntity> where TEntity : class
     {
