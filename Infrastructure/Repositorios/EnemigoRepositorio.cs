@@ -1,8 +1,9 @@
 using Core.Entidades;
+using Core.Interfaces.Repositorios;
 
 namespace Infrastructure.Repositorios
 {
-    public class EnemigoRepositorio : BaseRepositorio<Enemigo>
+    public class EnemigoRepositorio : BaseRepositorio<Enemigo>, IEnemigoRepositorio
     {
         public EnemigoRepositorio(AppDbContext context) : base(context) {
             

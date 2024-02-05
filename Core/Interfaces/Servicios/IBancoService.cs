@@ -17,3 +17,5 @@ namespace Core.Servicios
         Task TakingMoney(Personaje personaje, Banco banco, double cantidad);
     }
 }
+
+// todo esto es fácil solo has en 3 horas lo que no hiciste en 3 días ¯\_(ツ)_/¯
