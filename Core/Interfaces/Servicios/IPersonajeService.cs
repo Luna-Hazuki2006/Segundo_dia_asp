@@ -9,16 +9,16 @@ namespace Core.Servicios
         Task<Personaje> CreatePersonaje(Personaje personaje);
         Task<Personaje> UpdatePersonaje(int id, Personaje personaje);
         Task DeletePersonaje(int id);
-        Task LevelUp(Personaje personaje);
-        Task LosingLife(Personaje personaje, double vida_perdida);
-        Task GainingLife(Personaje personaje, double vida_ganada);
-        Task UsingMagic(Personaje personaje, double magia);
-        Task LosingMagic(Personaje personaje, double magia);
-        Task GainingStrenght(Personaje personaje, double puntos);
-        Task LosingStrenght(Personaje personaje, double puntos);
-        Task GainingAgility(Personaje personaje, double puntos);
-        Task LosingAgility(Personaje personaje, double puntos);
-        Task GainingInteligence(Personaje personaje, double puntos);
-        Task LosingInteligence(Personaje personaje, double puntos);
+        Task<Personaje> LevelUp(Personaje personaje);
+        Task<Personaje> LosingLife(Personaje personaje, double vida_perdida);
+        Task<Personaje> GainingLife(Personaje personaje, double vida_ganada);
+        Task<Personaje> UsingMagic(Personaje personaje, double magia);
+        Task<Personaje> LosingMagic(Personaje personaje, double magia);
+        Task<Personaje> GainingStrenght(Personaje personaje, double puntos);
+        Task<Personaje> LosingStrenght(Personaje personaje, double puntos);
+        Task<Personaje> GainingAgility(Personaje personaje, double puntos);
+        Task<Personaje> LosingAgility(Personaje personaje, double puntos);
+        Task<Personaje> GainingInteligence(Personaje personaje, double puntos);
+        Task<Personaje> LosingInteligence(Personaje personaje, double puntos);
     }
 }

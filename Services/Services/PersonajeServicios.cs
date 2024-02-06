@@ -56,7 +56,7 @@ namespace Services.Services
         {
             PersonajeValidacion PersonajeValidator = new();
             
-            var validationResult = await PersonajeValidacion.ValidateAsync(newPersonajeValues);
+            var validationResult = await PersonajeValidator.ValidateAsync(newPersonajeValues);
             if (!validationResult.IsValid)
                 throw new ArgumentException(validationResult.Errors.ToString());
 
@@ -65,15 +65,14 @@ namespace Services.Services
             if (PersonajeToBeUpdated == null)
                 throw new ArgumentException("Invalid Personaje ID while updating");
 
-            PersonajeToBeUpdated.tipo = newPersonajeValues.tipo;
-            PersonajeToBeUpdated.nombre = newPersonajeValues.tipo;
+            PersonajeToBeUpdated.Nombre = newPersonajeValues.Nombre;
 
             await _unitOfWork.CommitAsync();
 
             return await _unitOfWork.PersonajeRepositorio.GetByIdAsync(PersonajeToBeUpdatedId);
         }
 
-        public async Task<Personaje> LevelUp(int PersonajeToBeUpdatedId, Personaje personaje)
+        public async Task<Personaje> LevelUp(Personaje personaje)
         {
             PersonajeValidacion PersonajeValidator = new();
             
@@ -81,7 +80,7 @@ namespace Services.Services
             if (!validationResult.IsValid)
                 throw new ArgumentException(validationResult.Errors.ToString());
 
-            Personaje PersonajeToBeUpdated = await _unitOfWork.PersonajeRepositorio.GetByIdAsync(PersonajeToBeUpdatedId);
+            Personaje PersonajeToBeUpdated = await _unitOfWork.PersonajeRepositorio.GetByIdAsync(personaje.Id);
 
             if (PersonajeToBeUpdated == null)
                 throw new ArgumentException("Invalid Personaje ID while updating");
@@ -96,7 +95,57 @@ namespace Services.Services
 
             await _unitOfWork.CommitAsync();
 
-            return await _unitOfWork.PersonajeRepositorio.GetByIdAsync(PersonajeToBeUpdatedId);
+            return await _unitOfWork.PersonajeRepositorio.GetByIdAsync(personaje.Id);
+        }
+
+        public Task<Personaje> LosingLife(Personaje personaje, double vida_perdida)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Personaje> GainingLife(Personaje personaje, double vida_ganada)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Personaje> UsingMagic(Personaje personaje, double magia)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Personaje> LosingMagic(Personaje personaje, double magia)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Personaje> GainingStrenght(Personaje personaje, double puntos)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Personaje> LosingStrenght(Personaje personaje, double puntos)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Personaje> GainingAgility(Personaje personaje, double puntos)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Personaje> LosingAgility(Personaje personaje, double puntos)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Personaje> GainingInteligence(Personaje personaje, double puntos)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Personaje> LosingInteligence(Personaje personaje, double puntos)
+        {
+            throw new NotImplementedException();
         }
     }
 }

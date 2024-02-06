@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Web\\Web.csproj": {}
+    "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Web\\Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Core\\Core.csproj": {
+    "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Core\\obj\\",
+        "projectPath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\d\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\d\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,25 +50,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Services\\Services.csproj": {
+    "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Services\\obj\\",
+        "projectPath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\d\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\d\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,8 +83,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Core\\Core.csproj"
+              "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Core\\Core.csproj"
               }
             }
           }
@@ -101,6 +98,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.9.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -112,25 +115,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Web\\Web.csproj": {
+    "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Web\\Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Web\\Web.csproj",
+        "projectUniqueName": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Web\\Web.csproj",
         "projectName": "Web",
-        "projectPath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Web\\Web.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Web\\obj\\",
+        "projectPath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Web\\Web.csproj",
+        "packagesPath": "C:\\Users\\d\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Web\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\d\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -144,11 +148,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Core\\Core.csproj"
+              "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Core\\Core.csproj"
               },
-              "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Services\\Services.csproj": {
-                "projectPath": "C:\\Users\\user\\Documents\\Mis documentos\\Programas asp net\\Segundo_dia_asp\\Services\\Services.csproj"
+              "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\d\\Desktop\\Ana Paula\\Programas ASP net\\Segundo_dia_asp\\Services\\Services.csproj"
               }
             }
           }
@@ -162,6 +166,16 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -173,7 +187,15 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

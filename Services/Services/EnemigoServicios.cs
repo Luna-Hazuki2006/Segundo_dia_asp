@@ -80,7 +80,7 @@ namespace Services.Services
                 throw new ArgumentException(validationResult.Errors.ToString());
 
             Enemigo EnemigoToBeUpdated = await _unitOfWork.EnemigoRepositorio.GetByIdAsync(EnemigoToBeUpdatedId);
-            Personaje PersonajeToBeUpdated = await _unitOfWork.PersonajeRepositorio.GetAllAsync(PersonajeToBeUpdatedId);
+            Personaje PersonajeToBeUpdated = await _unitOfWork.PersonajeRepositorio.GetByIdAsync(PersonajeToBeUpdatedId);
 
             if (EnemigoToBeUpdated == null || PersonajeToBeUpdated == null)
                 throw new ArgumentException("Invalid Enemigo ID while updating");

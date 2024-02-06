@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Core.Entidades;
 using Services.Services;
-using Infrastructure.Data;
 using Core.Servicios;
 
 namespace Web.Controllers
