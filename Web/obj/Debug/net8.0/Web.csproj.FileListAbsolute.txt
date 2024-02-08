@@ -32,3 +32,15 @@ C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\obj\Debug\net
 C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\obj\Debug\net8.0\Web.genruntimeconfig.cache
 C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\obj\Debug\net8.0\ref\Web.dll
 C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\obj\Debug\net8.0\Web.sourcelink.json
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Npgsql.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Core.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Infrastructure.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Services.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Core.pdb
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Services.pdb
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Web\bin\Debug\net8.0\Infrastructure.pdb

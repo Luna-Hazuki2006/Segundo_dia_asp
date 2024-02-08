@@ -21,13 +21,13 @@ namespace Infrastructure.Data
         }
 
         public IPersonajeRepositorio PersonajeRepositorio => _personajeRepositorio ??= new PersonajeRepositorio(_context);
-        public ITiendaRepositorio TiendaRepositorio => _tiendaRepositorio ??= new TiendaRepositorio(context);
-        public IObjetoRepositorio ObjetoRepositorio => _objetoRepositorio ??= new ObjetoRepositorio(context);
-        public IMisionRepositorio MisionRepositorio => _misionRepositorio ??= new MisionRepositorio(context);
-        public IInvetarioRepositorio InvetarioRepositorio => _inventarioRepositorio ??= new InventarioRepositorio(context);
-        public IEnemigoRepositorio EnemigoRepositorio => _enemigoRepositorio ??= new EnemigoRepositorio(context);
-        public IBancoRepositorio BancoRepositorio => _bancoRepositorio ??= new BancoRepositorio(context);
-        
+        public ITiendaRepositorio TiendaRepositorio => _tiendaRepositorio ??= new TiendaRepositorio(_context);
+        public IObjetoRepositorio ObjetoRepositorio => _objetoRepositorio ??= new ObjetoRepositorio(_context);
+        public IMisionRepositorio MisionRepositorio => _misionRepositorio ??= new MisionRepositorio(_context);
+        public IInventarioRepositorio InventarioRepositorio => _inventarioRepositorio ??= new InventarioRepositorio(_context);
+        public IEnemigoRepositorio EnemigoRepositorio => _enemigoRepositorio ??= new EnemigoRepositorio(_context);
+        public IBancoRepositorio BancoRepositorio => _bancoRepositorio ??= new BancoRepositorio(_context);
+
         public async Task<int> CommitAsync()
         {
             return await _context.SaveChangesAsync();
