@@ -10,3 +10,7 @@ C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Services\obj\Debu
 C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Services\obj\Debug\net8.0\Services.pdb
 C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Services\obj\Debug\net8.0\ref\Services.dll
 C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Services\obj\Debug\net8.0\Services.sourcelink.json
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Services\bin\Debug\net8.0\Core.dll
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Services\bin\Debug\net8.0\Core.pdb
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Services\obj\Debug\net8.0\Services.csproj.AssemblyReference.cache
+C:\Users\d\Desktop\Ana Paula\Programas ASP net\Segundo_dia_asp\Services\obj\Debug\net8.0\Services.csproj.CopyComplete

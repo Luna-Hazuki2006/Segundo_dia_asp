@@ -2,10 +2,13 @@ using Core.Entidades;
 using Services.Services;
 using Infrastructure.Data;
 using Core.Servicios;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class MisionController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class MisionController : ControllerBase
     {
         private IMisionService _servicio;
 
@@ -53,7 +56,7 @@ namespace Web.Controllers
             try
             {
                 var updatedMision =
-                    await _servicio.UpdateMision(Mision);
+                    await _servicio.UpdateMision(id, Mision);
 
                 return Ok(updatedMision);
             }

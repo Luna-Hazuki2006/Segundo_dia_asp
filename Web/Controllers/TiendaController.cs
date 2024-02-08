@@ -2,12 +2,13 @@ using Core.Entidades;
 using Services.Services;
 using Infrastructure.Data;
 using Core.Servicios;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TiendaController
+    public class TiendaController : ControllerBase
     {
         private ITiendaService _servicio;
 
@@ -55,7 +56,7 @@ namespace Web.Controllers
             try
             {
                 var updatedTienda =
-                    await _servicio.UpdateTienda(Tienda);
+                    await _servicio.UpdateTienda(id, Tienda);
 
                 return Ok(updatedTienda);
             }

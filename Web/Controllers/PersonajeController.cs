@@ -59,7 +59,7 @@ namespace Web.Controllers
             try
             {
                 var updatedPersonaje =
-                    await _servicio.UpdatePersonaje(personaje);
+                    await _servicio.UpdatePersonaje(id, personaje);
 
                 return Ok(updatedPersonaje);
             }

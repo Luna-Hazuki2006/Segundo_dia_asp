@@ -2,10 +2,13 @@ using Core.Entidades;
 using Services.Services;
 using Infrastructure.Data;
 using Core.Servicios;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class BancoController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class BancoController : ControllerBase
     {
         private IBancoService _servicio;
 
@@ -53,7 +56,7 @@ namespace Web.Controllers
             try
             {
                 var updatedBanco =
-                    await _servicio.UpdateBanco(Banco);
+                    await _servicio.UpdateBanco(id, Banco);
 
                 return Ok(updatedBanco);
             }

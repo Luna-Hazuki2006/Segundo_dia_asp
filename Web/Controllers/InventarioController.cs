@@ -2,10 +2,13 @@ using Core.Entidades;
 using Services.Services;
 using Infrastructure.Data;
 using Core.Servicios;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class InventarioController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class InventarioController : ControllerBase
     {
         private IInventarioService _servicio;
 
@@ -53,7 +56,7 @@ namespace Web.Controllers
             try
             {
                 var updatedInventario =
-                    await _servicio.UpdateInventario(Inventario);
+                    await _servicio.UpdateInventario(id, Inventario);
 
                 return Ok(updatedInventario);
             }

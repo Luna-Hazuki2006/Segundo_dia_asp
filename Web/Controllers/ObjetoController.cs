@@ -2,10 +2,13 @@ using Core.Entidades;
 using Services.Services;
 using Infrastructure.Data;
 using Core.Servicios;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class ObjetoController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ObjetoController : ControllerBase
     {
         private IObjetoService _servicio;
 
@@ -53,7 +56,7 @@ namespace Web.Controllers
             try
             {
                 var updatedObjeto =
-                    await _servicio.UpdateObjeto(Objeto);
+                    await _servicio.UpdateObjeto(id, Objeto);
 
                 return Ok(updatedObjeto);
             }

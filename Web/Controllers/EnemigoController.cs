@@ -2,10 +2,13 @@ using Core.Entidades;
 using Services.Services;
 using Infrastructure.Data;
 using Core.Servicios;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
-    public class EnemigoController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class EnemigoController : ControllerBase
     {
         private IEnemigoService _servicio;
 
@@ -53,7 +56,7 @@ namespace Web.Controllers
             try
             {
                 var updatedEnemigo =
-                    await _servicio.UpdateEnemigo(Enemigo);
+                    await _servicio.UpdateEnemigo(id, Enemigo);
 
                 return Ok(updatedEnemigo);
             }
