@@ -13,7 +13,7 @@ namespace Core.Servicios
         Task<Inventario> CreateInventario(Inventario Inventario);
         Task<Inventario> UpdateInventario(int id, Inventario Inventario);
         Task DeleteInventario(int id);
-        Task ObtainingObject(Personaje personaje, Objeto objeto);
-        Task UsingObject(Personaje personaje, Objeto objeto);
+        Task<Inventario> ObtainingObject(Personaje personaje, Objeto objeto);
+        Task<Inventario> UsingObject(Personaje personaje, Objeto objeto);
     }
 }

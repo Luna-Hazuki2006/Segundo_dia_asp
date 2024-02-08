@@ -17,6 +17,11 @@ namespace Services.Services
             _unitOfWork = unitOfWork;
         }
 
+        public Task<Tienda> BuyingObjects(Tienda tienda, Personaje personaje, Objeto objeto)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Tienda> CreateTienda(Tienda newTienda)
         {
             TiendaValidacion validator = new();
@@ -56,7 +61,7 @@ namespace Services.Services
         {
             TiendaValidacion TiendaValidator = new();
             
-            var validationResult = await TiendaValidacion.ValidateAsync(newTiendaValues);
+            var validationResult = await TiendaValidator.ValidateAsync(newTiendaValues);
             if (!validationResult.IsValid)
                 throw new ArgumentException(validationResult.Errors.ToString());
 
@@ -65,8 +70,8 @@ namespace Services.Services
             if (TiendaToBeUpdated == null)
                 throw new ArgumentException("Invalid Tienda ID while updating");
 
-            TiendaToBeUpdated.tipo = newTiendaValues.tipo;
-            TiendaToBeUpdated.nombre = newTiendaValues.tipo;
+            // TiendaToBeUpdated.tipo = newTiendaValues.tipo;
+            // TiendaToBeUpdated.nombre = newTiendaValues.tipo;
 
             await _unitOfWork.CommitAsync();
 

@@ -13,7 +13,7 @@ namespace Core.Servicios
         Task<Mision> CreateMision(Mision Mision);
         Task<Mision> UpdateMision(int id, Mision Mision);
         Task DeleteMision(int id);
-        Task WinningMision(Personaje personaje, Mision mision);
-        Task LosingMision(Personaje personaje, Mision mision);
+        Task<Mision> WinningMision(Personaje personaje, Mision mision);
+        Task<Mision> LosingMision(Personaje personaje, Mision mision);
     }
 }

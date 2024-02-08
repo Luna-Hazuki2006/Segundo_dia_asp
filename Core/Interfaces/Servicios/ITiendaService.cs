@@ -13,6 +13,6 @@ namespace Core.Servicios
         Task<Tienda> CreateTienda(Tienda Tienda);
         Task<Tienda> UpdateTienda(int id, Tienda Tienda);
         Task DeleteTienda(int id);
-        Task BuyingObjects(Tienda tienda, Personaje personaje, Objeto objeto);
+        Task<Tienda> BuyingObjects(Tienda tienda, Personaje personaje, Objeto objeto);
     }
 }

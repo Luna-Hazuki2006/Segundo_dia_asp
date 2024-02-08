@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Entidades;
+using Core.Interfaces;
 using Core.Servicios;
+using Services.validators;
 
 namespace Services.Services
 {
@@ -39,6 +42,11 @@ namespace Services.Services
             await _unitOfWork.CommitAsync();
         }
 
+        public Task<Banco> DepositingMoney(Personaje personaje, Banco banco, double cantidad)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Banco>> GetAll()
         {
             return await _unitOfWork.BancoRepositorio.GetAllAsync();
@@ -49,11 +57,16 @@ namespace Services.Services
             return await _unitOfWork.BancoRepositorio.GetByIdAsync(id);
         }
 
+        public Task<Banco> TakingMoney(Personaje personaje, Banco banco, double cantidad)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Banco> UpdateBanco(int BancoToBeUpdatedId, Banco newBancoValues)
         {
             BancoValidacion BancoValidator = new();
             
-            var validationResult = await BancoValidacion.ValidateAsync(newBancoValues);
+            var validationResult = await BancoValidator.ValidateAsync(newBancoValues);
             if (!validationResult.IsValid)
                 throw new ArgumentException(validationResult.Errors.ToString());
 
@@ -62,13 +75,22 @@ namespace Services.Services
             if (BancoToBeUpdated == null)
                 throw new ArgumentException("Invalid Banco ID while updating");
 
-            BancoToBeUpdated.tipo = newBancoValues.tipo;
-            BancoToBeUpdated.nombre = newBancoValues.tipo;
+            // BancoToBeUpdated.tipo = newBancoValues.tipo;
+            // BancoToBeUpdated.nombre = newBancoValues.tipo;
 
             await _unitOfWork.CommitAsync();
 
             return await _unitOfWork.BancoRepositorio.GetByIdAsync(BancoToBeUpdatedId);
         }
 
+        Task<IEnumerable<Banco>> IBancoService.GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<Banco> IBancoService.GetBancoById(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

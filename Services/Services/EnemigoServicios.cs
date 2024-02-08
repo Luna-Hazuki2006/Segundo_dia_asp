@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Entidades;
+using Core.Interfaces;
 using Core.Servicios;
+using Services.validators;
 
 namespace Services.Services
 {
@@ -13,6 +15,11 @@ namespace Services.Services
         public EnemigoServicios(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+        }
+
+        public Task<Enemigo> Attacking(Enemigo enemigo, Personaje personaje)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<Enemigo> CreateEnemigo(Enemigo newEnemigo)
@@ -40,6 +47,11 @@ namespace Services.Services
             await _unitOfWork.CommitAsync();
         }
 
+        public Task<Enemigo> Dying(Enemigo enemigo, Personaje personaje)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Enemigo>> GetAll()
         {
             return await _unitOfWork.EnemigoRepositorio.GetAllAsync();
@@ -50,11 +62,21 @@ namespace Services.Services
             return await _unitOfWork.EnemigoRepositorio.GetByIdAsync(id);
         }
 
+        public Task<Enemigo> GettingAttacked(Enemigo enemigo, Personaje personaje)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Enemigo> Killing(Enemigo enemigo, Personaje personaje)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Enemigo> UpdateEnemigo(int EnemigoToBeUpdatedId, Enemigo newEnemigoValues)
         {
             EnemigoValidacion EnemigoValidator = new();
             
-            var validationResult = await EnemigoValidacion.ValidateAsync(newEnemigoValues);
+            var validationResult = await EnemigoValidator.ValidateAsync(newEnemigoValues);
             if (!validationResult.IsValid)
                 throw new ArgumentException(validationResult.Errors.ToString());
 
@@ -63,36 +85,14 @@ namespace Services.Services
             if (EnemigoToBeUpdated == null)
                 throw new ArgumentException("Invalid Enemigo ID while updating");
 
-            EnemigoToBeUpdated.tipo = newEnemigoValues.tipo;
-            EnemigoToBeUpdated.nombre = newEnemigoValues.tipo;
+            // EnemigoToBeUpdated.tipo = newEnemigoValues.tipo;
+            // EnemigoToBeUpdated.nombre = newEnemigoValues.tipo;
 
             await _unitOfWork.CommitAsync();
 
             return await _unitOfWork.EnemigoRepositorio.GetByIdAsync(EnemigoToBeUpdatedId);
         }
 
-        public async Task<Enemigo> LevelUp(int EnemigoToBeUpdatedId, int PersonajeToBeUpdatedId, Enemigo enemigo, Personaje personaje)
-        {
-            EnemigoValidacion EnemigoValidator = new();
-            
-            var validationResult = await EnemigoValidator.ValidateAsync(enemigo);
-            if (!validationResult.IsValid)
-                throw new ArgumentException(validationResult.Errors.ToString());
-
-            Enemigo EnemigoToBeUpdated = await _unitOfWork.EnemigoRepositorio.GetByIdAsync(EnemigoToBeUpdatedId);
-            Personaje PersonajeToBeUpdated = await _unitOfWork.PersonajeRepositorio.GetByIdAsync(PersonajeToBeUpdatedId);
-
-            if (EnemigoToBeUpdated == null || PersonajeToBeUpdated == null)
-                throw new ArgumentException("Invalid Enemigo ID while updating");
-
-            if (personaje.Energia > 5 && personaje.Fuerza > 5)
-            {
-                EnemigoToBeUpdated.Vida = enemigo.Vida - (personaje.Fuerza - 4) + enemigo.Nivel_Amenaza;
-                PersonajeToBeUpdated.Energia = personaje.Energia - 5;
-            }
-
-            await _unitOfWork.CommitAsync();
-            return await _unitOfWork.EnemigoRepositorio.GetByIdAsync(EnemigoToBeUpdatedId);
-        }
+        
     }
 }

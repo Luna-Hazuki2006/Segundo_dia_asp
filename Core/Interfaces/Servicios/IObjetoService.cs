@@ -13,6 +13,6 @@ namespace Core.Servicios
         Task<Objeto> CreateObjeto(Objeto Objeto);
         Task<Objeto> UpdateObjeto(int id, Objeto Objeto);
         Task DeleteObjeto(int id);
-        Task ChangingValue(Objeto objeto, double valor);
+        Task<Objeto> ChangingValue(Objeto objeto, double valor);
     }
 }

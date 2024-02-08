@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Entidades;
+using Core.Interfaces;
 using Core.Servicios;
+using Services.validators;
 
 namespace Services.Services
 {
@@ -49,11 +52,16 @@ namespace Services.Services
             return await _unitOfWork.InventarioRepositorio.GetByIdAsync(id);
         }
 
+        public Task<Inventario> ObtainingObject(Personaje personaje, Objeto objeto)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Inventario> UpdateInventario(int InventarioToBeUpdatedId, Inventario newInventarioValues)
         {
             InventarioValidacion InventarioValidator = new();
             
-            var validationResult = await InventarioValidacion.ValidateAsync(newInventarioValues);
+            var validationResult = await InventarioValidator.ValidateAsync(newInventarioValues);
             if (!validationResult.IsValid)
                 throw new ArgumentException(validationResult.Errors.ToString());
 
@@ -62,12 +70,17 @@ namespace Services.Services
             if (InventarioToBeUpdated == null)
                 throw new ArgumentException("Invalid Inventario ID while updating");
 
-            InventarioToBeUpdated.tipo = newInventarioValues.tipo;
-            InventarioToBeUpdated.nombre = newInventarioValues.tipo;
+            // InventarioToBeUpdated.tipo = newInventarioValues.tipo;
+            // InventarioToBeUpdated.nombre = newInventarioValues.tipo;
 
             await _unitOfWork.CommitAsync();
 
             return await _unitOfWork.InventarioRepositorio.GetByIdAsync(InventarioToBeUpdatedId);
+        }
+
+        public Task<Inventario> UsingObject(Personaje personaje, Objeto objeto)
+        {
+            throw new NotImplementedException();
         }
     }
 }

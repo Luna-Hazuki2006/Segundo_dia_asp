@@ -2,25 +2,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Entidades;
+using Core.Interfaces;
+using Core.Servicios;
+using Services.validators;
 
 namespace Services.Services
 {
-    public class ObjetoServicios
+    public class ObjetoServicios : IObjetoService
     {
         private readonly IUnitOfWork _unitOfWork;
-        public TiendaServicios(IUnitOfWork unitOfWork)
+        public ObjetoServicios(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<Tienda> CreateTienda(Tienda newTienda)
+        public Task<Objeto> ChangingValue(Objeto objeto, double valor)
         {
-            TiendaValidacion validator = new();
+            throw new NotImplementedException();
+        }
 
-            var validationResult = await validator.ValidateAsync(newTienda);
+        public async Task<Objeto> CreateObjeto(Objeto newObjeto)
+        {
+            ObjetoValidacion validator = new();
+
+            var validationResult = await validator.ValidateAsync(newObjeto);
             if (validationResult.IsValid)
             {
-                await _unitOfWork.TiendaRepositorio.AddAsync(newTienda);
+                await _unitOfWork.ObjetoRepositorio.AddAsync(newObjeto);
                 await _unitOfWork.CommitAsync();
             }
             else
@@ -28,45 +37,50 @@ namespace Services.Services
                 throw new ArgumentException(validationResult.Errors.ToString());
             }
 
-            return newTienda;
+            return newObjeto;
         }
 
-        public async Task DeleteTienda(int TiendaId)
+        public async Task DeleteObjeto(int ObjetoId)
         {
-            Tienda Tienda = await _unitOfWork.TiendaRepositorio.GetByIdAsync(TiendaId);
-            _unitOfWork.TiendaRepositorio.Remove(Tienda);
+            Objeto Objeto = await _unitOfWork.ObjetoRepositorio.GetByIdAsync(ObjetoId);
+            _unitOfWork.ObjetoRepositorio.Remove(Objeto);
             await _unitOfWork.CommitAsync();
         }
 
-        public async Task<IEnumerable<Tienda>> GetAll()
+        public async Task<IEnumerable<Objeto>> GetAll()
         {
-            return await _unitOfWork.TiendaRepositorio.GetAllAsync();
+            return await _unitOfWork.ObjetoRepositorio.GetAllAsync();
         }
 
-        public async Task<Tienda> GetTiendaById(int id)
+        public async Task<Objeto> GetObjetoById(int id)
         {
-            return await _unitOfWork.TiendaRepositorio.GetByIdAsync(id);
+            return await _unitOfWork.ObjetoRepositorio.GetByIdAsync(id);
         }
 
-        public async Task<Tienda> UpdateTienda(int TiendaToBeUpdatedId, Tienda newTiendaValues)
+        public async Task<Objeto> UpdateObjeto(int ObjetoToBeUpdatedId, Objeto newObjetoValues)
         {
-            TiendaValidacion TiendaValidator = new();
+            ObjetoValidacion ObjetoValidator = new();
             
-            var validationResult = await TiendaValidacion.ValidateAsync(newTiendaValues);
+            var validationResult = await ObjetoValidator.ValidateAsync(newObjetoValues);
             if (!validationResult.IsValid)
                 throw new ArgumentException(validationResult.Errors.ToString());
 
-            Tienda TiendaToBeUpdated = await _unitOfWork.TiendaRepositorio.GetByIdAsync(TiendaToBeUpdatedId);
+            Objeto ObjetoToBeUpdated = await _unitOfWork.ObjetoRepositorio.GetByIdAsync(ObjetoToBeUpdatedId);
 
-            if (TiendaToBeUpdated == null)
-                throw new ArgumentException("Invalid Tienda ID while updating");
+            if (ObjetoToBeUpdated == null)
+                throw new ArgumentException("Invalid Objeto ID while updating");
 
-            TiendaToBeUpdated.tipo = newTiendaValues.tipo;
-            TiendaToBeUpdated.nombre = newTiendaValues.tipo;
+            // ObjetoToBeUpdated.tipo = newObjetoValues.tipo;
+            // ObjetoToBeUpdated.nombre = newObjetoValues.tipo;
 
             await _unitOfWork.CommitAsync();
 
-            return await _unitOfWork.TiendaRepositorio.GetByIdAsync(TiendaToBeUpdatedId);
+            return await _unitOfWork.ObjetoRepositorio.GetByIdAsync(ObjetoToBeUpdatedId);
+        }
+
+        Task<IEnumerable<Objeto>> IObjetoService.GetAll()
+        {
+            throw new NotImplementedException();
         }
     }
 }

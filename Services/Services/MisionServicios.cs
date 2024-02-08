@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Entidades;
+using Core.Interfaces;
 using Core.Servicios;
+using Services.validators;
 
 namespace Services.Services
 {
@@ -49,11 +52,16 @@ namespace Services.Services
             return await _unitOfWork.MisionRepositorio.GetByIdAsync(id);
         }
 
+        public Task<Mision> LosingMision(Personaje personaje, Mision mision)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Mision> UpdateMision(int MisionToBeUpdatedId, Mision newMisionValues)
         {
             MisionValidacion MisionValidator = new();
             
-            var validationResult = await MisionValidacion.ValidateAsync(newMisionValues);
+            var validationResult = await MisionValidator.ValidateAsync(newMisionValues);
             if (!validationResult.IsValid)
                 throw new ArgumentException(validationResult.Errors.ToString());
 
@@ -62,12 +70,17 @@ namespace Services.Services
             if (MisionToBeUpdated == null)
                 throw new ArgumentException("Invalid Mision ID while updating");
 
-            MisionToBeUpdated.tipo = newMisionValues.tipo;
-            MisionToBeUpdated.nombre = newMisionValues.tipo;
+            // MisionToBeUpdated.tipo = newMisionValues.tipo;
+            // MisionToBeUpdated.nombre = newMisionValues.tipo;
 
             await _unitOfWork.CommitAsync();
 
             return await _unitOfWork.MisionRepositorio.GetByIdAsync(MisionToBeUpdatedId);
+        }
+
+        public Task<Mision> WinningMision(Personaje personaje, Mision mision)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -13,8 +13,8 @@ namespace Core.Servicios
         Task<Banco> CreateBanco(Banco Banco);
         Task<Banco> UpdateBanco(int id, Banco Banco);
         Task DeleteBanco(int id);
-        Task DepositingMoney(Personaje personaje, Banco banco, double cantidad);
-        Task TakingMoney(Personaje personaje, Banco banco, double cantidad);
+        Task<Banco> DepositingMoney(Personaje personaje, Banco banco, double cantidad);
+        Task<Banco> TakingMoney(Personaje personaje, Banco banco, double cantidad);
     }
 }
 

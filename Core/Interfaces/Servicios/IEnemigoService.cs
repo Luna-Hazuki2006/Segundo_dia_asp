@@ -13,9 +13,9 @@ namespace Core.Servicios
         Task<Enemigo> CreateEnemigo(Enemigo Enemigo);
         Task<Enemigo> UpdateEnemigo(int id, Enemigo Enemigo);
         Task DeleteEnemigo(int id);
-        Task Attacking(Enemigo enemigo, Personaje personaje);
-        Task GettingAttacked(Enemigo enemigo, Personaje personaje);
-        Task Killing(Enemigo enemigo, Personaje personaje);
-        Task Dying(Enemigo enemigo, Personaje personaje);
+        Task<Enemigo> Attacking(Enemigo enemigo, Personaje personaje);
+        Task<Enemigo> GettingAttacked(Enemigo enemigo, Personaje personaje);
+        Task<Enemigo> Killing(Enemigo enemigo, Personaje personaje);
+        Task<Enemigo> Dying(Enemigo enemigo, Personaje personaje);
     }
 }
