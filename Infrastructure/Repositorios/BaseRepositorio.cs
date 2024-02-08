@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Repositorios;
+using Core.Interfaces.Repositorios;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +13,7 @@ namespace Infrastructure.Repositorios
         internal AppDbContext Context;
         internal DbSet<TEntity> dbSet;
 
-        public BaseRepository(AppDbContext context)
+        public BaseRepositorio(AppDbContext context)
         {
             this.Context = context;
             this.dbSet = context.Set<TEntity>();

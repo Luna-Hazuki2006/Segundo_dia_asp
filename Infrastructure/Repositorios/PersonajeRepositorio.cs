@@ -12,7 +12,37 @@ namespace Infrastructure.Repositorios
 
         public virtual async Task LevelUp(Personaje personaje) {
             dbSet.Attach(personaje);
-            Context.Entry(personaje).State = personaje.Modified;
+            // Context.Entry(personaje).State = personaje.Modified;
+        }
+
+        public Task ModifyAgility(Personaje personaje)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ModifyInteligence(Personaje personaje)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ModifyLevel(Personaje personaje)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ModifyLife(Personaje personaje)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ModifyMagic(Personaje personaje)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task ModifyStrenght(Personaje personaje)
+        {
+            throw new NotImplementedException();
         }
     }
 }
