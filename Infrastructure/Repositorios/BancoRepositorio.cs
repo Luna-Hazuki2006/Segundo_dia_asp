@@ -11,3 +11,5 @@ namespace Infrastructure.Repositorios
         }
     }
 }
+
+// https://www.bilibili.com/404#up
