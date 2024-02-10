@@ -4,7 +4,7 @@ namespace Core.Entidades
     {
         public int Id {get; set;}
         public int Espacio_Disponible {get; set;}
-        public List<Objeto> Objetos {get; set;}
+        public ICollection<Objeto> Objetos {get; set;}
         public double Peso_Total {get; set;}
     }
 }
