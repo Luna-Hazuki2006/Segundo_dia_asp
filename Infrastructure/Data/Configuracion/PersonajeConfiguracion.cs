@@ -25,6 +25,9 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Defensa).IsRequired();
             builder.Property(x => x.Resistencia).IsRequired();
             builder.Property(x => x.Experiencia).IsRequired();
+            builder.HasOne(x => x.Inventario).
+                WithOne(x => x.Personaje).
+                HasForeignKey<Personaje>(x => x.Inventario_Id);
             builder.ToTable("PersonajesAna");
         }
     }

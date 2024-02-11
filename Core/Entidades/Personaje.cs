@@ -16,7 +16,8 @@ namespace Core.Entidades {
         public double Defensa {get; set;}
         public double Resistencia {get; set;}
         public double Experiencia {get; set;}
-        public Inventario? Inventario {get; set;}
+        public int Inventario_Id {get; set;}
+        public virtual Inventario? Inventario {get; set;}
 
     }
 }
