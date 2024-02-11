@@ -14,6 +14,9 @@ namespace Infrastructure.Data
         private InventarioRepositorio _inventarioRepositorio;
         private EnemigoRepositorio _enemigoRepositorio;
         private BancoRepositorio _bancoRepositorio;
+        private ObjetivoRepositorio _objetivoRepositorio;
+        private RecompensaRepositorio _recompensaRepositorio;
+        private Tipo_PersonajeRepositorio _tipo_PersonajeRepositorio;
         
         public UnitOfWork(AppDbContext context)
         {
@@ -27,6 +30,9 @@ namespace Infrastructure.Data
         public IInventarioRepositorio InventarioRepositorio => _inventarioRepositorio ??= new InventarioRepositorio(_context);
         public IEnemigoRepositorio EnemigoRepositorio => _enemigoRepositorio ??= new EnemigoRepositorio(_context);
         public IBancoRepositorio BancoRepositorio => _bancoRepositorio ??= new BancoRepositorio(_context);
+        public IObjetivoRepositorio ObjetivoRepositorio => _objetivoRepositorio ??= new ObjetivoRepositorio(_context);
+        public IRecompensaRepositorio RecompensaRepositorio => _recompensaRepositorio ??= new RecompensaRepositorio(_context);
+        public ITipo_PersonajeRepositorio Tipo_PersonajeRepositorio => _tipo_PersonajeRepositorio ??= new Tipo_PersonajeRepositorio(_context);
 
         public async Task<int> CommitAsync()
         {

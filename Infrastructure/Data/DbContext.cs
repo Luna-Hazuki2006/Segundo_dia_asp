@@ -17,6 +17,9 @@ namespace Infrastructure.Data
         public DbSet<Inventario> Inventarios {get; set;}
         public DbSet<Enemigo> Enemigos {get; set;}
         public DbSet<Banco> Bancos {get; set;}
+        public DbSet<Objetivo> Objetivos {get; set;}
+        public DbSet<Recompensa> Recompensas {get; set;}
+        public DbSet<Tipo_Personaje> Tipos_Personajes {get; set;}
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -30,6 +33,9 @@ namespace Infrastructure.Data
             builder.ApplyConfiguration(new InventarioConfiguracion());
             builder.ApplyConfiguration(new EnemigoConfiguracion());
             builder.ApplyConfiguration(new BancoConfiguracion());
+            builder.ApplyConfiguration(new ObjetivoRepositorio());
+            builder.ApplyConfiguration(new RecompensaRepositorio());
+            builder.ApplyConfiguration(new Tipo_PersonajeRepositorio());
         }
 
         // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
