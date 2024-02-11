@@ -1,5 +1,6 @@
 using Core.Interfaces;
 using Core.Interfaces.Repositorios;
+using Core.Interfaces.Servicios;
 using Core.Servicios;
 using Infrastructure.Data;
 using Infrastructure.Repositorios;
@@ -57,6 +58,12 @@ builder.Services.AddScoped(typeof(IEnemigoRepositorio), typeof(EnemigoRepositori
 builder.Services.AddScoped(typeof(IEnemigoService), typeof(EnemigoServicios));
 builder.Services.AddScoped(typeof(IBancoRepositorio), typeof(BancoRepositorio));
 builder.Services.AddScoped(typeof(IBancoService), typeof(BancoServicios));
+builder.Services.AddScoped(typeof(IObjetivoRepositorio), typeof(ObjetivoRepositorio));
+builder.Services.AddScoped(typeof(IObjetivoService), typeof(ObjetivoServicios));
+builder.Services.AddScoped(typeof(IRecompensaRepositorio), typeof(RecompensaRepositorio));
+builder.Services.AddScoped(typeof(IRecompensaService), typeof(RecompensaServicios));
+builder.Services.AddScoped(typeof(ITipo_PersonajeRepositorio), typeof(Tipo_PersonajeRepositorio));
+builder.Services.AddScoped(typeof(ITipo_PersonajeService), typeof(Tipo_PersonajeServicios));
 
 /*builder.Services.AddDbContext<AppDbContext>(options => 
                     options.UseNpgsql("Host=dpg-clupqhmg1b2c73cacl4g-a;Server=dpg-clupqhmg1b2c73cacl4g-a.oregon-postgres.render.com;Port=5432;Database=gracoapidb;Username=graco;Password=d16mVIlilx3OFVzXgb0AW5VYnTOv0pMT"
