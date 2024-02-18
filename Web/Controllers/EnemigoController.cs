@@ -17,9 +17,22 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para devolver todos los enemigos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Una lista de objetos de enemigo</returns>
+        /// <remarks>
+        /// Ejemplo de lista devuelta 
+        /// [
+        ///     {
+        ///         "Id": 0, 
+        ///         "Nombre": "string", 
+        ///         "Nivel_Amenaza": 0, 
+        ///         "Vida": 0.0, 
+        ///         "Recompensas": [...], 
+        ///         "Habilidades": [...]
+        ///     }
+        /// ]
+        /// </remarks>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Enemigo>>> Get(){
 
@@ -29,23 +42,45 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para obtener un enemigo
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Enemigo>>> Get(int id){
+        /// <param name="Id">La id del enemigo</param>
+        /// <returns>Objeto de Enemigo</returns>
+        /// <remarks>
+        /// Ejemplo de objeto devuelto 
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Nivel_Amenaza": 0, 
+        ///     "Vida": 0.0, 
+        ///     "Recompensas": [...], 
+        ///     "Habilidades": [...]
+        /// }
+        /// </remarks>
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<IEnumerable<Enemigo>>> Get(int Id){
 
-            var Enemigos = await _servicio.GetEnemigoById(id);
+            var Enemigos = await _servicio.GetEnemigoById(Id);
 
             return Ok(Enemigos);
         }
 
         /// <summary>
-        /// 
+        /// Método para creación de un enemigo
         /// </summary>
-        /// <param name="Enemigo"></param>
-        /// <returns></returns>
+        /// <param name="Enemigo">La instancia de la clase de enemigo</param>
+        /// <returns>Objeto del nuevo enemigo</returns>
+        /// <remarks>
+        /// Ejemplo de un Json request
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Nivel_Amenaza": 0, 
+        ///     "Vida": 0.0, 
+        ///     "Recompensas": [...], 
+        ///     "Habilidades": [...]
+        /// }
+        /// </remarks>
         [HttpPost]
         public async Task<ActionResult<Enemigo>> Post([FromBody] Enemigo Enemigo)
         {
@@ -63,18 +98,29 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para modificar un enemigo
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="Enemigo"></param>
-        /// <returns></returns>
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Enemigo>> Put(int id, [FromBody] Enemigo Enemigo)
+        /// <param name="Id">Es la id del enemigo a modificar</param>
+        /// <param name="Enemigo">Es el objeto del enemigo modificado</param>
+        /// <returns>El enemigo modificado</returns>
+        /// <remarks>
+        /// Ejemplo de un enemigo devuelto
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Nivel_Amenaza": 0, 
+        ///     "Vida": 0.0, 
+        ///     "Recompensas": [...], 
+        ///     "Habilidades": [...]
+        /// }
+        /// </remarks>
+        [HttpPut("{Id}")]
+        public async Task<ActionResult<Enemigo>> Put(int Id, [FromBody] Enemigo Enemigo)
         {
             try
             {
                 var updatedEnemigo =
-                    await _servicio.UpdateEnemigo(id, Enemigo);
+                    await _servicio.UpdateEnemigo(Id, Enemigo);
 
                 return Ok(updatedEnemigo);
             }
