@@ -17,9 +17,21 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para devolver todos los objetos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Una lista de objetos</returns>
+        /// <remarks>
+        /// Ejemplo de lista devuelta 
+        /// [
+        ///     {
+        ///         "Id": 0, 
+        ///         "Nombre": "string", 
+        ///         "Descripcion": "string", 
+        ///         "Tipo": "string", 
+        ///         "Valor": 0.0
+        ///     }
+        /// ]
+        /// </remarks>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Objeto>>> Get(){
 
@@ -29,23 +41,43 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para obtener un objeto
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Objeto>>> Get(int id){
+        /// <param name="Id">La id del objeto</param>
+        /// <returns>Objeto de "Objeto"</returns>
+        /// <remarks>
+        /// Ejemplo de objeto devuelto 
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Descripcion": "string", 
+        ///     "Tipo": "string", 
+        ///     "Valor": 0.0
+        /// }
+        /// </remarks>
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<IEnumerable<Objeto>>> Get(int Id){
 
-            var Objetos = await _servicio.GetObjetoById(id);
+            var Objetos = await _servicio.GetObjetoById(Id);
 
             return Ok(Objetos);
         }
 
         /// <summary>
-        /// 
+        /// Método para creación de un objeto
         /// </summary>
-        /// <param name="Objeto"></param>
-        /// <returns></returns>
+        /// <param name="Objeto">La instancia de la clase de objeto</param>
+        /// <returns>Objeto del nuevo objeto</returns>
+        /// <remarks>
+        /// Ejemplo de un Json request
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Descripcion": "string", 
+        ///     "Tipo": "string", 
+        ///     "Valor": 0.0
+        /// }
+        /// </remarks>
         [HttpPost]
         public async Task<ActionResult<Objeto>> Post([FromBody] Objeto Objeto)
         {
@@ -63,18 +95,28 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para modificar un objeto
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="Objeto"></param>
-        /// <returns></returns>
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Objeto>> Put(int id, [FromBody] Objeto Objeto)
+        /// <param name="Id">Es la id del objeto a modificar</param>
+        /// <param name="Objeto">Es el objeto de la clase "Objeto"</param>
+        /// <returns>El objeto modificado</returns>
+        /// <remarks>
+        /// Ejemplo de un objeto devuelto
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Descripcion": "string", 
+        ///     "Tipo": "string", 
+        ///     "Valor": 0.0
+        /// }
+        /// </remarks>
+        [HttpPut("{Id}")]
+        public async Task<ActionResult<Objeto>> Put(int Id, [FromBody] Objeto Objeto)
         {
             try
             {
                 var updatedObjeto =
-                    await _servicio.UpdateObjeto(id, Objeto);
+                    await _servicio.UpdateObjeto(Id, Objeto);
 
                 return Ok(updatedObjeto);
             }
