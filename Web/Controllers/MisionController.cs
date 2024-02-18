@@ -17,9 +17,21 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para devolver todas las misiones
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Una lista de objetos de misiones</returns>
+        /// <remarks>
+        /// Ejemplo de lista devuelta 
+        /// [
+        ///     {
+        ///         "Id": 0, 
+        ///         "Nombre": "string", 
+        ///         "Objetivos": [...], 
+        ///         "Recompensas": [...], 
+        ///         "Estado": "string"
+        ///     }
+        /// ]
+        /// </remarks>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Mision>>> Get(){
 
@@ -29,23 +41,43 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para obtener una mision
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Mision>>> Get(int id){
+        /// <param name="Id">La id de la mision</param>
+        /// <returns>Objeto de mision</returns>
+        /// <remarks>
+        /// Ejemplo de objeto devuelto 
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Objetivos": [...], 
+        ///     "Recompensas": [...], 
+        ///     "Estado": "string"
+        /// }
+        /// </remarks>
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<IEnumerable<Mision>>> Get(int Id){
 
-            var Misions = await _servicio.GetMisionById(id);
+            var Misions = await _servicio.GetMisionById(Id);
 
             return Ok(Misions);
         }
 
         /// <summary>
-        /// 
+        /// Método para creación de una misión
         /// </summary>
-        /// <param name="Mision"></param>
-        /// <returns></returns>
+        /// <param name="Mision">La instancia de la clase de mision</param>
+        /// <returns>Objeto de la nueva mision</returns>
+        /// <remarks>
+        /// Ejemplo de un Json request
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Objetivos": [...], 
+        ///     "Recompensas": [...], 
+        ///     "Estado": "string"
+        /// }
+        /// </remarks>
         [HttpPost]
         public async Task<ActionResult<Mision>> Post([FromBody] Mision Mision)
         {
@@ -63,18 +95,28 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para modificar una mision
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="Mision"></param>
-        /// <returns></returns>
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Mision>> Put(int id, [FromBody] Mision Mision)
+        /// <param name="Id">Es la id de la misión a modificar</param>
+        /// <param name="Mision">Es el objeto de la Mision</param>
+        /// <returns>La mision modificada</returns>
+        /// <remarks>
+        /// Ejemplo de una mision devuelta 
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Objetivos": [...], 
+        ///     "Recompensas": [...], 
+        ///     "Estado": "string"
+        /// }
+        /// </remarks>
+        [HttpPut("{Id}")]
+        public async Task<ActionResult<Mision>> Put(int Id, [FromBody] Mision Mision)
         {
             try
             {
                 var updatedMision =
-                    await _servicio.UpdateMision(id, Mision);
+                    await _servicio.UpdateMision(Id, Mision);
 
                 return Ok(updatedMision);
             }
