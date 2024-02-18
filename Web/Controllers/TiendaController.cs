@@ -17,9 +17,20 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para devolver todas las tiendas
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Una lista de objetos de tienda</returns>
+        /// <remarks>
+        /// Ejemplo de lista devuelta 
+        /// [
+        ///     {
+        ///         "Id": 0, 
+        ///         "Inventario_Tienda": [...], 
+        ///         "Precios": [...], 
+        ///         "Stock": [...], 
+        ///         "Dinero_Tienda": 0.0
+        ///     }
+        /// ]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tienda>>> Get(){
 
@@ -29,23 +40,43 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para obtener una tienda
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Tienda>>> Get(int id){
+        /// <param name="Id">La id de la tienda</param>
+        /// <returns>Objeto de tienda</returns>
+        /// <remarks>
+        /// Ejemplo de objeto devuelto 
+        /// {
+        ///     "Id": 0, 
+        ///     "Inventario_Tienda": [...], 
+        ///     "Precios": [...], 
+        ///     "Stock": [...], 
+        ///     "Dinero_Tienda": 0.0
+        /// }
+        /// </remarks>
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<IEnumerable<Tienda>>> Get(int Id){
 
-            var Tiendas = await _servicio.GetTiendaById(id);
+            var Tiendas = await _servicio.GetTiendaById(Id);
 
             return Ok(Tiendas);
         }
 
         /// <summary>
-        /// 
+        /// Método para creación de una tienda
         /// </summary>
-        /// <param name="Tienda"></param>
-        /// <returns></returns>
+        /// <param name="Tienda">La instancia de la clase de tienda</param>
+        /// <returns>Objeto de la nueva tienda</returns>
+        /// <remarks>
+        /// Ejemplo de un Json request
+        /// {
+        ///     "Id": 0, 
+        ///     "Inventario_Tienda": [...], 
+        ///     "Precios": [...], 
+        ///     "Stock": [...], 
+        ///     "Dinero_Tienda": 0.0
+        /// }
+        /// </remarks>
         [HttpPost]
         public async Task<ActionResult<Tienda>> Post([FromBody] Tienda Tienda)
         {
@@ -63,18 +94,28 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para modificar una tienda
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="Tienda"></param>
-        /// <returns></returns>
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Tienda>> Put(int id, [FromBody] Tienda Tienda)
+        /// <param name="Id">Es la id de la tienda a modificar</param>
+        /// <param name="Tienda">Es el objeto de la tienda modificada</param>
+        /// <returns>La tienda modificada</returns>
+        /// <remarks>
+        /// Ejemplo de una tienda devuelta
+        /// {
+        ///     "Id": 0, 
+        ///     "Inventario_Tienda": [...], 
+        ///     "Precios": [...], 
+        ///     "Stock": [...], 
+        ///     "Dinero_Tienda": 0.0
+        /// }
+        /// </remarks>
+        [HttpPut("{Id}")]
+        public async Task<ActionResult<Tienda>> Put(int Id, [FromBody] Tienda Tienda)
         {
             try
             {
                 var updatedTienda =
-                    await _servicio.UpdateTienda(id, Tienda);
+                    await _servicio.UpdateTienda(Id, Tienda);
 
                 return Ok(updatedTienda);
             }
