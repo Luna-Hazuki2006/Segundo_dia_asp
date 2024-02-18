@@ -17,9 +17,21 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para devolver todos los inventarios
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Una lista de objetos de inventarios</returns>
+        /// <remarks>
+        /// Ejemplo de lista devuelta 
+        /// [
+        ///     {
+        ///         "Id": 0, 
+        ///         "Personaje": {...}, 
+        ///         "Espacio_Disponible": 0, 
+        ///         "Objetos": [...], 
+        ///         "Peso_Total": 0.0
+        ///     }
+        /// ]
+        /// </remarks>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Inventario>>> Get(){
 
@@ -29,23 +41,43 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para obtener un inventario
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<Inventario>>> Get(int id){
+        /// <param name="Id">La id del inventario</param>
+        /// <returns>Objeto de Inventario</returns>
+        /// <remarks>
+        /// Ejemplo de objeto devuelto 
+        /// {
+        ///     "Id": 0, 
+        ///     "Personaje": {...}, 
+        ///     "Espacio_Disponible": 0, 
+        ///     "Objetos": [...], 
+        ///     "Peso_Total": 0.0
+        /// }
+        /// </remarks>
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<IEnumerable<Inventario>>> Get(int Id){
 
-            var Inventarios = await _servicio.GetInventarioById(id);
+            var Inventarios = await _servicio.GetInventarioById(Id);
 
             return Ok(Inventarios);
         }
 
         /// <summary>
-        /// 
+        /// Método para creación de un inventario
         /// </summary>
-        /// <param name="Inventario"></param>
-        /// <returns></returns>
+        /// <param name="Inventario">La instancia de la clase de Inventario</param>
+        /// <returns>Objeto del nuevo inventario</returns>
+        /// <remarks>
+        /// Ejemplo de un Json request
+        /// {
+        ///     "Id": 0, 
+        ///     "Personaje": {...}, 
+        ///     "Espacio_Disponible": 0, 
+        ///     "Objetos": [...], 
+        ///     "Peso_Total": 0.0
+        /// }
+        /// </remarks>
         [HttpPost]
         public async Task<ActionResult<Inventario>> Post([FromBody] Inventario Inventario)
         {
@@ -63,18 +95,28 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para modificar un inventario
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="Inventario"></param>
-        /// <returns></returns>
-        [HttpPut("{id}")]
-        public async Task<ActionResult<Inventario>> Put(int id, [FromBody] Inventario Inventario)
+        /// <param name="Id">Es la id del inventario a modificar</param>
+        /// <param name="Inventario">Es el objeto del inventario modificado</param>
+        /// <returns>El inventario modificado</returns>
+        /// <remarks>
+        /// Ejemplo de un inventario devuelto
+        /// {
+        ///     "Id": 0, 
+        ///     "Personaje": {...}, 
+        ///     "Espacio_Disponible": 0, 
+        ///     "Objetos": [...], 
+        ///     "Peso_Total": 0.0
+        /// }
+        /// </remarks>
+        [HttpPut("{Id}")]
+        public async Task<ActionResult<Inventario>> Put(int Id, [FromBody] Inventario Inventario)
         {
             try
             {
                 var updatedInventario =
-                    await _servicio.UpdateInventario(id, Inventario);
+                    await _servicio.UpdateInventario(Id, Inventario);
 
                 return Ok(updatedInventario);
             }
