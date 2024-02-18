@@ -17,9 +17,21 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para devolver todos los bancos
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Una lista de objetos de bancos</returns>
+        /// <remarks>
+        /// Ejemplo de lista devuelta 
+        /// [
+        ///     {
+        ///         "Id": 0, 
+        ///         "Cuenta_Bacaria": 0.0, 
+        ///         "Intereses": 0.0, 
+        ///         "Prestamos": 0.0, 
+        ///         "Seguridad": 0
+        ///     }
+        /// ]
+        /// </remarks>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Banco>>> Get(){
 
@@ -29,10 +41,20 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para obtener un banco
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        /// <param name="id">La id del banco</param>
+        /// <returns>Objeto de Banco</returns>
+        /// <remarks>
+        /// Ejemplo de objeto devuelto 
+        /// {
+        ///     "Id": 0, 
+        ///     "Cuenta_Bacaria": 0.0, 
+        ///     "Intereses": 0.0, 
+        ///     "Prestamos": 0.0, 
+        ///     "Seguridad": 0
+        /// }
+        /// </remarks>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Banco>>> Get(int id){
 
@@ -42,10 +64,20 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para creación de un banco
         /// </summary>
-        /// <param name="Banco"></param>
-        /// <returns></returns>
+        /// <param name="Banco">La instancia de la clase de banco</param>
+        /// <returns>Objeto del nuevo banco</returns>
+        /// <remarks>
+        /// Ejemplo de un Json request
+        /// {
+        ///     "Id": 0, 
+        ///     "Cuenta_Bacaria": 0.0, 
+        ///     "Intereses": 0.0, 
+        ///     "Prestamos": 0.0, 
+        ///     "Seguridad": 0
+        /// }
+        /// </remarks>
         [HttpPost]
         public async Task<ActionResult<Banco>> Post([FromBody] Banco Banco)
         {
@@ -63,11 +95,21 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// 
+        /// Método para modificar un banco
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="Banco"></param>
-        /// <returns></returns>
+        /// <param name="id">Es la id del banco a modificar</param>
+        /// <param name="Banco">Es el objeto del banco modificado</param>
+        /// <returns>El banco modificado</returns>
+        /// <remarks>
+        /// Ejemplo de un banco devuelto
+        /// {
+        ///     "Id": 0, 
+        ///     "Cuenta_Bacaria": 0.0, 
+        ///     "Intereses": 0.0, 
+        ///     "Prestamos": 0.0, 
+        ///     "Seguridad": 0
+        /// }
+        /// </remarks>
         [HttpPut("{id}")]
         public async Task<ActionResult<Banco>> Put(int id, [FromBody] Banco Banco)
         {
