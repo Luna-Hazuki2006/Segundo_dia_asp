@@ -19,7 +19,10 @@ namespace Web.Controllers
            _servicio = personajeService;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Personaje>>> Get(){
 
@@ -29,10 +32,10 @@ namespace Web.Controllers
         }
         
         /// <summary>
-        /// Cosa que objetener
+        /// 
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns> 
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Personaje>>> Get(int id){
 
@@ -41,22 +44,28 @@ namespace Web.Controllers
             return Ok(Personajes);
         }
 
-        // POST api/<PersonajeController>
         /// <summary>
-        /// Cosas a actualizar
+        /// Método para creación de un personaje
         /// </summary>
-        /// <param name="id">Prueba</param>
-        /// <returns>Algo para devolver</returns>
+        /// <param name="personaje">La instancia de la clase personaje</param>
+        /// <returns>Objeto del nuevo personaje</returns>
         /// <remarks>
-        /// Sample request:
-        ///
-        ///     POST /Todo
-        ///     {
-        ///        "id": 1,
-        ///        "name": "Item #1",
-        ///        "isComplete": true
-        ///     }
-        ///
+        /// Ejemplo de un Json request
+        /// {
+        ///     "Id": 0, 
+        ///     "Nombre": "string", 
+        ///     "Nivel": 0, 
+        ///     "Tipo_Id": 0, 
+        ///     "Salud": 0.0, 
+        ///     "Energia": 0.0, 
+        ///     "Fuerza": 0.0, 
+        ///     "Inteligencia": 0.0, 
+        ///     "Agilidad": 0.0, 
+        ///     "Defensa": 0.0, 
+        ///     "Resistencia": 0.0, 
+        ///     "Experiencia": 0.0, 
+        ///     "Inventario_Id": 0
+        /// }
         /// </remarks>
         [HttpPost]
         public async Task<ActionResult<Personaje>> Post([FromBody] Personaje personaje)
@@ -74,7 +83,7 @@ namespace Web.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<ActionResult<Personaje>> Put(int id, [FromBody] Personaje personaje)
         {
             try

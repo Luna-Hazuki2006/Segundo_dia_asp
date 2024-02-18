@@ -21,11 +21,12 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "API de juego RPG",
-        Description = "Es una ASP.NET Core Web API que tratara sobre un juego RPG",
+        Description = "Es una ASP.NET Core Web API que tratará sobre un juego RPG " + 
+        "en el cual se puede dar jugar como un personaje atacar enemigos, hacer misiones y mucho más :D",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {
-            Name = "Example Contact",
+            Name = "Ana Paula Mendoza Díaz",
             Url = new Uri("https://example.com/contact")
         },
         License = new OpenApiLicense
