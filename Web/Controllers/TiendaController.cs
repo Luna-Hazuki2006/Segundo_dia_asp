@@ -16,7 +16,10 @@ namespace Web.Controllers
            _servicio = TiendaService;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tienda>>> Get(){
 
@@ -25,6 +28,11 @@ namespace Web.Controllers
             return Ok(Tiendas);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Tienda>>> Get(int id){
 
@@ -33,7 +41,11 @@ namespace Web.Controllers
             return Ok(Tiendas);
         }
 
-        // POST api/<TiendaController>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Tienda"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Tienda>> Post([FromBody] Tienda Tienda)
         {
@@ -50,7 +62,13 @@ namespace Web.Controllers
             }
         }
 
-        [HttpPut]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Tienda"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
         public async Task<ActionResult<Tienda>> Put(int id, [FromBody] Tienda Tienda)
         {
             try

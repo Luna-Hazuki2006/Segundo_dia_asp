@@ -16,7 +16,10 @@ namespace Web.Controllers
            _servicio = EnemigoService;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Enemigo>>> Get(){
 
@@ -25,6 +28,11 @@ namespace Web.Controllers
             return Ok(Enemigos);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Enemigo>>> Get(int id){
 
@@ -33,7 +41,11 @@ namespace Web.Controllers
             return Ok(Enemigos);
         }
 
-        // POST api/<EnemigoController>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Enemigo"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Enemigo>> Post([FromBody] Enemigo Enemigo)
         {
@@ -50,7 +62,13 @@ namespace Web.Controllers
             }
         }
 
-        [HttpPut]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Enemigo"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
         public async Task<ActionResult<Enemigo>> Put(int id, [FromBody] Enemigo Enemigo)
         {
             try

@@ -18,7 +18,10 @@ namespace Web.Controllers
            _servicio = Tipo_PersonajeService;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Tipo_Personaje>>> Get(){
 
@@ -27,6 +30,11 @@ namespace Web.Controllers
             return Ok(Tipo_Personajes);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Tipo_Personaje>>> Get(int id){
 
@@ -35,7 +43,11 @@ namespace Web.Controllers
             return Ok(Tipo_Personajes);
         }
 
-        // POST api/<Tipo_PersonajeController>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Tipo_Personaje"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Tipo_Personaje>> Post([FromBody] Tipo_Personaje Tipo_Personaje)
         {
@@ -52,7 +64,13 @@ namespace Web.Controllers
             }
         }
 
-        [HttpPut]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Tipo_Personaje"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
         public async Task<ActionResult<Tipo_Personaje>> Put(int id, [FromBody] Tipo_Personaje Tipo_Personaje)
         {
             try

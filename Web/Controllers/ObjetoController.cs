@@ -16,7 +16,10 @@ namespace Web.Controllers
            _servicio = ObjetoService;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Objeto>>> Get(){
 
@@ -25,6 +28,11 @@ namespace Web.Controllers
             return Ok(Objetos);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Objeto>>> Get(int id){
 
@@ -33,7 +41,11 @@ namespace Web.Controllers
             return Ok(Objetos);
         }
 
-        // POST api/<ObjetoController>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Objeto"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Objeto>> Post([FromBody] Objeto Objeto)
         {
@@ -50,7 +62,13 @@ namespace Web.Controllers
             }
         }
 
-        [HttpPut]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Objeto"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
         public async Task<ActionResult<Objeto>> Put(int id, [FromBody] Objeto Objeto)
         {
             try

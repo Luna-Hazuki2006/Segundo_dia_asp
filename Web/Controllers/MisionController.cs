@@ -16,7 +16,10 @@ namespace Web.Controllers
            _servicio = MisionService;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Mision>>> Get(){
 
@@ -25,6 +28,11 @@ namespace Web.Controllers
             return Ok(Misions);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Mision>>> Get(int id){
 
@@ -33,7 +41,11 @@ namespace Web.Controllers
             return Ok(Misions);
         }
 
-        // POST api/<MisionController>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Mision"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Mision>> Post([FromBody] Mision Mision)
         {
@@ -50,7 +62,13 @@ namespace Web.Controllers
             }
         }
 
-        [HttpPut]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Mision"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
         public async Task<ActionResult<Mision>> Put(int id, [FromBody] Mision Mision)
         {
             try

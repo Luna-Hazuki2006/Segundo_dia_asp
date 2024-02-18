@@ -16,7 +16,10 @@ namespace Web.Controllers
            _servicio = InventarioService;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Inventario>>> Get(){
 
@@ -25,6 +28,11 @@ namespace Web.Controllers
             return Ok(Inventarios);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Inventario>>> Get(int id){
 
@@ -33,7 +41,11 @@ namespace Web.Controllers
             return Ok(Inventarios);
         }
 
-        // POST api/<InventarioController>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Inventario"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Inventario>> Post([FromBody] Inventario Inventario)
         {
@@ -50,7 +62,13 @@ namespace Web.Controllers
             }
         }
 
-        [HttpPut]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Inventario"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
         public async Task<ActionResult<Inventario>> Put(int id, [FromBody] Inventario Inventario)
         {
             try

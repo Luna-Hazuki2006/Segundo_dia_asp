@@ -18,7 +18,10 @@ namespace Web.Controllers
            _servicio = RecompensaService;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Recompensa>>> Get(){
 
@@ -27,6 +30,11 @@ namespace Web.Controllers
             return Ok(Recompensas);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Recompensa>>> Get(int id){
 
@@ -35,7 +43,11 @@ namespace Web.Controllers
             return Ok(Recompensas);
         }
 
-        // POST api/<RecompensaController>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Recompensa"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Recompensa>> Post([FromBody] Recompensa Recompensa)
         {
@@ -52,7 +64,13 @@ namespace Web.Controllers
             }
         }
 
-        [HttpPut]
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="Recompensa"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
         public async Task<ActionResult<Recompensa>> Put(int id, [FromBody] Recompensa Recompensa)
         {
             try
