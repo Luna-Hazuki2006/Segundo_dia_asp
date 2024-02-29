@@ -1,0 +1,715 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Web</name>
+    </assembly>
+    <members>
+        <member name="M:Web.Controllers.BancoController.Get">
+            <summary>
+            Método para devolver todos los bancos
+            </summary>
+            <returns>Una lista de objetos de bancos</returns>
+            <remarks>
+            Ejemplo de lista devuelta 
+            [
+                {
+                    "Id": 0, 
+                    "Cuenta_Bacaria": 0.0, 
+                    "Intereses": 0.0, 
+                    "Prestamos": 0.0, 
+                    "Seguridad": 0
+                }
+            ]
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.BancoController.Get(System.Int32)">
+            <summary>
+            Método para obtener un banco
+            </summary>
+            <param name="id">La id del banco</param>
+            <returns>Objeto de Banco</returns>
+            <remarks>
+            Ejemplo de objeto devuelto 
+            {
+                "Id": 0, 
+                "Cuenta_Bacaria": 0.0, 
+                "Intereses": 0.0, 
+                "Prestamos": 0.0, 
+                "Seguridad": 0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.BancoController.Post(Core.Entidades.Banco)">
+            <summary>
+            Método para creación de un banco
+            </summary>
+            <param name="Banco">La instancia de la clase de banco</param>
+            <returns>Objeto del nuevo banco</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Cuenta_Bacaria": 0.0, 
+                "Intereses": 0.0, 
+                "Prestamos": 0.0, 
+                "Seguridad": 0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.BancoController.Put(System.Int32,Core.Entidades.Banco)">
+            <summary>
+            Método para modificar un banco
+            </summary>
+            <param name="id">Es la id del banco a modificar</param>
+            <param name="Banco">Es el objeto del banco modificado</param>
+            <returns>El banco modificado</returns>
+            <remarks>
+            Ejemplo de un banco devuelto
+            {
+                "Id": 0, 
+                "Cuenta_Bacaria": 0.0, 
+                "Intereses": 0.0, 
+                "Prestamos": 0.0, 
+                "Seguridad": 0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.EnemigoController.Get">
+            <summary>
+            Método para devolver todos los enemigos
+            </summary>
+            <returns>Una lista de objetos de enemigo</returns>
+            <remarks>
+            Ejemplo de lista devuelta 
+            [
+                {
+                    "Id": 0, 
+                    "Nombre": "string", 
+                    "Nivel_Amenaza": 0, 
+                    "Vida": 0.0, 
+                    "Recompensas": [...], 
+                    "Habilidades": [...]
+                }
+            ]
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.EnemigoController.Get(System.Int32)">
+            <summary>
+            Método para obtener un enemigo
+            </summary>
+            <param name="Id">La id del enemigo</param>
+            <returns>Objeto de Enemigo</returns>
+            <remarks>
+            Ejemplo de objeto devuelto 
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Nivel_Amenaza": 0, 
+                "Vida": 0.0, 
+                "Recompensas": [...], 
+                "Habilidades": [...]
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.EnemigoController.Post(Core.Entidades.Enemigo)">
+            <summary>
+            Método para creación de un enemigo
+            </summary>
+            <param name="Enemigo">La instancia de la clase de enemigo</param>
+            <returns>Objeto del nuevo enemigo</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Nivel_Amenaza": 0, 
+                "Vida": 0.0, 
+                "Recompensas": [...], 
+                "Habilidades": [...]
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.EnemigoController.Put(System.Int32,Core.Entidades.Enemigo)">
+            <summary>
+            Método para modificar un enemigo
+            </summary>
+            <param name="Id">Es la id del enemigo a modificar</param>
+            <param name="Enemigo">Es el objeto del enemigo modificado</param>
+            <returns>El enemigo modificado</returns>
+            <remarks>
+            Ejemplo de un enemigo devuelto
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Nivel_Amenaza": 0, 
+                "Vida": 0.0, 
+                "Recompensas": [...], 
+                "Habilidades": [...]
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.InventarioController.Get">
+            <summary>
+            Método para devolver todos los inventarios
+            </summary>
+            <returns>Una lista de objetos de inventarios</returns>
+            <remarks>
+            Ejemplo de lista devuelta 
+            [
+                {
+                    "Id": 0, 
+                    "Personaje": {...}, 
+                    "Espacio_Disponible": 0, 
+                    "Objetos": [...], 
+                    "Peso_Total": 0.0
+                }
+            ]
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.InventarioController.Get(System.Int32)">
+            <summary>
+            Método para obtener un inventario
+            </summary>
+            <param name="Id">La id del inventario</param>
+            <returns>Objeto de Inventario</returns>
+            <remarks>
+            Ejemplo de objeto devuelto 
+            {
+                "Id": 0, 
+                "Personaje": {...}, 
+                "Espacio_Disponible": 0, 
+                "Objetos": [...], 
+                "Peso_Total": 0.0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.InventarioController.Post(Core.Entidades.Inventario)">
+            <summary>
+            Método para creación de un inventario
+            </summary>
+            <param name="Inventario">La instancia de la clase de Inventario</param>
+            <returns>Objeto del nuevo inventario</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Personaje": {...}, 
+                "Espacio_Disponible": 0, 
+                "Objetos": [...], 
+                "Peso_Total": 0.0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.InventarioController.Put(System.Int32,Core.Entidades.Inventario)">
+            <summary>
+            Método para modificar un inventario
+            </summary>
+            <param name="Id">Es la id del inventario a modificar</param>
+            <param name="Inventario">Es el objeto del inventario modificado</param>
+            <returns>El inventario modificado</returns>
+            <remarks>
+            Ejemplo de un inventario devuelto
+            {
+                "Id": 0, 
+                "Personaje": {...}, 
+                "Espacio_Disponible": 0, 
+                "Objetos": [...], 
+                "Peso_Total": 0.0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.MisionController.Get">
+            <summary>
+            Método para devolver todas las misiones
+            </summary>
+            <returns>Una lista de objetos de misiones</returns>
+            <remarks>
+            Ejemplo de lista devuelta 
+            [
+                {
+                    "Id": 0, 
+                    "Nombre": "string", 
+                    "Objetivos": [...], 
+                    "Recompensas": [...], 
+                    "Estado": "string"
+                }
+            ]
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.MisionController.Get(System.Int32)">
+            <summary>
+            Método para obtener una mision
+            </summary>
+            <param name="Id">La id de la mision</param>
+            <returns>Objeto de mision</returns>
+            <remarks>
+            Ejemplo de objeto devuelto 
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Objetivos": [...], 
+                "Recompensas": [...], 
+                "Estado": "string"
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.MisionController.Post(Core.Entidades.Mision)">
+            <summary>
+            Método para creación de una misión
+            </summary>
+            <param name="Mision">La instancia de la clase de mision</param>
+            <returns>Objeto de la nueva mision</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Objetivos": [...], 
+                "Recompensas": [...], 
+                "Estado": "string"
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.MisionController.Put(System.Int32,Core.Entidades.Mision)">
+            <summary>
+            Método para modificar una mision
+            </summary>
+            <param name="Id">Es la id de la misión a modificar</param>
+            <param name="Mision">Es el objeto de la Mision</param>
+            <returns>La mision modificada</returns>
+            <remarks>
+            Ejemplo de una mision devuelta 
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Objetivos": [...], 
+                "Recompensas": [...], 
+                "Estado": "string"
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.ObjetivoController.Get">
+            <summary>
+            Método para devolver todos los objetivos
+            </summary>
+            <returns>Una lista de objetivos</returns>
+            <remarks>
+            Ejemplo de lista devuelta 
+            [
+                {
+                    "Id": 0, 
+                    "Nombre": "string", 
+                    "Descripcion": "string", 
+                    "Hecho": false
+                }
+            ]
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.ObjetivoController.Get(System.Int32)">
+            <summary>
+            Método para obtener un objetivo
+            </summary>
+            <param name="Id">La id del objetivo</param>
+            <returns>Objeto de Objetivo</returns>
+            <remarks>
+            Ejemplo de objetivo devuelto 
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Descripcion": "string", 
+                "Hecho": false
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.ObjetivoController.Post(Core.Entidades.Objetivo)">
+            <summary>
+            Método para creación de un objetivo
+            </summary>
+            <param name="Objetivo">La instancia de la clase de objetivo</param>
+            <returns>Objeto del nuevo objetivo</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Descripcion": "string", 
+                "Hecho": false
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.ObjetivoController.Put(System.Int32,Core.Entidades.Objetivo)">
+            <summary>
+            Método para modificar un tipo de personaje
+            </summary>
+            <param name="Id">Es la id del objetivo a modificar</param>
+            <param name="Objetivo">Es el objetivo modificado</param>
+            <returns>El objetivo modificado</returns>
+            <remarks>
+            Ejemplo de un objetivo devuelto 
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Descripcion": "string", 
+                "Hecho": false
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.ObjetoController.Get">
+            <summary>
+            Método para devolver todos los objetos
+            </summary>
+            <returns>Una lista de objetos</returns>
+            <remarks>
+            Ejemplo de lista devuelta 
+            [
+                {
+                    "Id": 0, 
+                    "Nombre": "string", 
+                    "Descripcion": "string", 
+                    "Tipo": "string", 
+                    "Valor": 0.0
+                }
+            ]
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.ObjetoController.Get(System.Int32)">
+            <summary>
+            Método para obtener un objeto
+            </summary>
+            <param name="Id">La id del objeto</param>
+            <returns>Objeto de "Objeto"</returns>
+            <remarks>
+            Ejemplo de objeto devuelto 
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Descripcion": "string", 
+                "Tipo": "string", 
+                "Valor": 0.0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.ObjetoController.Post(Core.Entidades.Objeto)">
+            <summary>
+            Método para creación de un objeto
+            </summary>
+            <param name="Objeto">La instancia de la clase de objeto</param>
+            <returns>Objeto del nuevo objeto</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Descripcion": "string", 
+                "Tipo": "string", 
+                "Valor": 0.0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.ObjetoController.Put(System.Int32,Core.Entidades.Objeto)">
+            <summary>
+            Método para modificar un objeto
+            </summary>
+            <param name="Id">Es la id del objeto a modificar</param>
+            <param name="Objeto">Es el objeto de la clase "Objeto"</param>
+            <returns>El objeto modificado</returns>
+            <remarks>
+            Ejemplo de un objeto devuelto
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Descripcion": "string", 
+                "Tipo": "string", 
+                "Valor": 0.0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.PersonajeController.Get">
+            <summary>
+            Método para devolver todos los personajes
+            </summary>
+            <returns>Una lista de objetos de personajes</returns>
+            <remarks>
+            Ejemplo de lista devuelta 
+            [
+                {
+                    "Id": 0, 
+                    "Nombre": "string", 
+                    "Nivel": 0, 
+                    "Tipo_Id": 0, 
+                    "Salud": 0.0, 
+                    "Energia": 0.0, 
+                    "Fuerza": 0.0, 
+                    "Inteligencia": 0.0, 
+                    "Agilidad": 0.0, 
+                    "Defensa": 0.0, 
+                    "Resistencia": 0.0, 
+                    "Experiencia": 0.0, 
+                    "Inventario_Id": 0
+                }
+            ]
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.PersonajeController.Get(System.Int32)">
+            <summary>
+            Método para obtener un personaje
+            </summary>
+            <param name="Id">La id del personaje</param>
+            <returns>Objeto de personaje</returns>
+            <remarks>
+            Ejemplo de objeto devuelto 
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Nivel": 0, 
+                "Tipo_Id": 0, 
+                "Salud": 0.0, 
+                "Energia": 0.0, 
+                "Fuerza": 0.0, 
+                "Inteligencia": 0.0, 
+                "Agilidad": 0.0, 
+                "Defensa": 0.0, 
+                "Resistencia": 0.0, 
+                "Experiencia": 0.0, 
+                "Inventario_Id": 0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.PersonajeController.Post(Core.Entidades.Personaje)">
+            <summary>
+            Método para creación de un personaje
+            </summary>
+            <param name="personaje">La instancia de la clase personaje</param>
+            <returns>Objeto del nuevo personaje</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Nivel": 0, 
+                "Tipo_Id": 0, 
+                "Salud": 0.0, 
+                "Energia": 0.0, 
+                "Fuerza": 0.0, 
+                "Inteligencia": 0.0, 
+                "Agilidad": 0.0, 
+                "Defensa": 0.0, 
+                "Resistencia": 0.0, 
+                "Experiencia": 0.0, 
+                "Inventario_Id": 0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.PersonajeController.Put(System.Int32,Core.Entidades.Personaje)">
+            <summary>
+            Método para modificar un personaje
+            </summary>
+            <param name="Id">Es la id del personaje a modificar</param>
+            <param name="personaje">Es el objeto del personaje modificado</param>
+            <returns>El personaje modificado</returns>
+            <remarks>
+            Ejemplo de un personaje devuelto
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Nivel": 0, 
+                "Tipo_Id": 0, 
+                "Salud": 0.0, 
+                "Energia": 0.0, 
+                "Fuerza": 0.0, 
+                "Inteligencia": 0.0, 
+                "Agilidad": 0.0, 
+                "Defensa": 0.0, 
+                "Resistencia": 0.0, 
+                "Experiencia": 0.0, 
+                "Inventario_Id": 0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.RecompensaController.Get">
+            <summary>
+            Método para devolver todos los tipos de recompensa
+            </summary>
+            <returns>Una lista de objetos de recompensa</returns>
+            <remarks>
+            Ejemplo de lista devuelta 
+            [
+                {
+                    "Id": 0, 
+                    "Experiencia": 0.0, 
+                    "Objetos": [...], 
+                    "Enemigos": [...], 
+                    "Monedas": 0
+                }
+            ]
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.RecompensaController.Get(System.Int32)">
+            <summary>
+            Método para obtener una recompensa
+            </summary>
+            <param name="Id">La id de la recompensa</param>
+            <returns>Objeto de tipo de recompensa</returns>
+            <remarks>
+            Ejemplo de objeto devuelto 
+            {
+                "Id": 0, 
+                "Experiencia": 0.0, 
+                "Objetos": [...], 
+                "Enemigos": [...], 
+                "Monedas": 0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.RecompensaController.Post(Core.Entidades.Recompensa)">
+            <summary>
+            Método para creación de una recompensa
+            </summary>
+            <param name="Recompensa">La instancia de la clase de recompensa</param>
+            <returns>Objeto de la nueva recompensa</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Experiencia": 0.0, 
+                "Objetos": [...], 
+                "Enemigos": [...], 
+                "Monedas": 0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.RecompensaController.Put(System.Int32,Core.Entidades.Recompensa)">
+            <summary>
+            Método para modificar una recompensa
+            </summary>
+            <param name="Id">Es la id de la recompensa a modificar</param>
+            <param name="Recompensa">Es el objeto de la recompensa modificada</param>
+            <returns>La recompensa modificada</returns>
+            <remarks>
+            Ejemplo de una recompensa devuelta 
+            {
+                "Id": 0, 
+                "Experiencia": 0.0, 
+                "Objetos": [...], 
+                "Enemigos": [...], 
+                "Monedas": 0
+            }
+            </remarks>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Web.Controllers.TiendaController.Get" -->
+        <member name="M:Web.Controllers.TiendaController.Get(System.Int32)">
+            <summary>
+            Método para obtener una tienda
+            </summary>
+            <param name="Id">La id de la tienda</param>
+            <returns>Objeto de tienda</returns>
+            <remarks>
+            Ejemplo de objeto devuelto 
+            {
+                "Id": 0, 
+                "Inventario_Tienda": [...], 
+                "Precios": [...], 
+                "Stock": [...], 
+                "Dinero_Tienda": 0.0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.TiendaController.Post(Core.Entidades.Tienda)">
+            <summary>
+            Método para creación de una tienda
+            </summary>
+            <param name="Tienda">La instancia de la clase de tienda</param>
+            <returns>Objeto de la nueva tienda</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Inventario_Tienda": [...], 
+                "Precios": [...], 
+                "Stock": [...], 
+                "Dinero_Tienda": 0.0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.TiendaController.Put(System.Int32,Core.Entidades.Tienda)">
+            <summary>
+            Método para modificar una tienda
+            </summary>
+            <param name="Id">Es la id de la tienda a modificar</param>
+            <param name="Tienda">Es el objeto de la tienda modificada</param>
+            <returns>La tienda modificada</returns>
+            <remarks>
+            Ejemplo de una tienda devuelta
+            {
+                "Id": 0, 
+                "Inventario_Tienda": [...], 
+                "Precios": [...], 
+                "Stock": [...], 
+                "Dinero_Tienda": 0.0
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.Tipo_PersonajeController.Get">
+            <summary>
+            Método para devolver todos los tipos de personajes
+            </summary>
+            <returns>Una lista de objetos de tipos de personajes</returns>
+            <remarks>
+            Ejemplo de lista devuelta 
+            [
+                {
+                    "Id": 0, 
+                    "Nombre": "string", 
+                    "Descripcion": "string"
+                }
+            ]
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.Tipo_PersonajeController.Get(System.Int32)">
+            <summary>
+            Método para obtener un tipo de personaje
+            </summary>
+            <param name="Id">La id del tipo de personaje</param>
+            <returns>Objeto de tipo de personaje</returns>
+            <remarks>
+            Ejemplo de objeto devuelto 
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Descripcion": "string"
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.Tipo_PersonajeController.Post(Core.Entidades.Tipo_Personaje)">
+            <summary>
+            Método para creación de un tipo de personaje
+            </summary>
+            <param name="Tipo_Personaje">La instancia de la clase de tipo_personaje</param>
+            <returns>Objeto del nuevo tipo de personaje</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Descripcion": "string"
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.Tipo_PersonajeController.Put(System.Int32,Core.Entidades.Tipo_Personaje)">
+            <summary>
+            Método para modificar un tipo de personaje
+            </summary>
+            <param name="Id">Es la id del tipo de personaje a modificar</param>
+            <param name="Tipo_Personaje">Es el objeto del tipo de personaje modificado</param>
+            <returns>El tipo de personaje modificado</returns>
+            <remarks>
+            Ejemplo de un tipo de personaje devuelto
+            {
+                "Id": 0, 
+                "Nombre": "string", 
+                "Descripcion": "string"
+            }
+            </remarks>
+        </member>
+    </members>
+</doc>
