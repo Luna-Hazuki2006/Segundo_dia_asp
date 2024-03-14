@@ -13,6 +13,8 @@ namespace Core.Interfaces {
         IInventarioRepositorio InventarioRepositorio {get;}
         IEnemigoRepositorio EnemigoRepositorio {get;}
         IBancoRepositorio BancoRepositorio {get;}
+        IUsuarioRepositorio UsuarioRepositorio {get;}
+        ISesionRepositorio SesionRepositorio {get;}
 
         Task<int> CommitAsync();
     }

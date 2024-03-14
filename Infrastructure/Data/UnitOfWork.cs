@@ -17,6 +17,8 @@ namespace Infrastructure.Data
         private ObjetivoRepositorio _objetivoRepositorio;
         private RecompensaRepositorio _recompensaRepositorio;
         private Tipo_PersonajeRepositorio _tipo_PersonajeRepositorio;
+        private UsuarioRepositorio _usuarioRepositorio;
+        private SesionRepositorio _sesionRepositorio;
         
         public UnitOfWork(AppDbContext context)
         {
