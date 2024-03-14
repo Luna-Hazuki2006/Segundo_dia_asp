@@ -35,6 +35,8 @@ namespace Infrastructure.Data
         public IObjetivoRepositorio ObjetivoRepositorio => _objetivoRepositorio ??= new ObjetivoRepositorio(_context);
         public IRecompensaRepositorio RecompensaRepositorio => _recompensaRepositorio ??= new RecompensaRepositorio(_context);
         public ITipo_PersonajeRepositorio Tipo_PersonajeRepositorio => _tipo_PersonajeRepositorio ??= new Tipo_PersonajeRepositorio(_context);
+        public IUsuarioRepositorio UsuarioRepositorio => _usuarioRepositorio ??= new UsuarioRepositorio(_context);
+        public ISesionRepositorio SesionRepositorio => _sesionRepositorio ??= new SesionRepositorio(_context);
 
         public async Task<int> CommitAsync()
         {

@@ -12,9 +12,8 @@ namespace Infrastructure.Data.Configuracion
     {
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
-            builder.HasKey(x => x.Cédula);
-            builder.Property(x => x.Cédula).UseIdentityColumn();
-            builder.Property(x => x.Cédula).HasMaxLength(225);
+            builder.HasKey(x => x.Cedula);
+            builder.Property(x => x.Cedula).HasMaxLength(8);
             builder.Property(x => x.Nombres).HasMaxLength(225).IsRequired();
             builder.Property(x => x.Apellidos).HasMaxLength(225).IsRequired();
             builder.Property(x => x.Apodo).HasMaxLength(225);
@@ -22,6 +21,7 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Contraseña).HasMaxLength(225).IsRequired();
             builder.Property(x => x.Nacimiento).IsRequired();
             builder.Property(x => x.Género).HasMaxLength(225);
+            builder.ToTable("UsuarioAna");
         }
     }
 }

@@ -10,6 +10,6 @@ namespace Core.Entidades
         public int Id {get; set;}
         public string? Token {get; set;}
         public string? Cedula_usuario {get; set;}
-        public Usuario? Usuario_Actual {get; set;}
+        public virtual Usuario? Usuario_Actual {get; set;}
     }
 }

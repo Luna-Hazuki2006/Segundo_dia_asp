@@ -14,5 +14,35 @@ namespace Infrastructure.Repositorios
         {
 
         }
+
+        public Task AddAsync(Usuario entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(Usuario entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveRange(IEnumerable<Usuario> entidades)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Update(Usuario entidad)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IEnumerable<Usuario>> IBaseRepositorio<Usuario>.GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        ValueTask<Usuario> IBaseRepositorio<Usuario>.GetByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
