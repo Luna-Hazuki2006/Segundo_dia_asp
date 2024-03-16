@@ -45,7 +45,7 @@ namespace Services.Services
                 throw new ArgumentException(validationResult.Errors.ToString());
             }
 
-            return newUsuario;
+            return usuario;
         }
     }
 }
