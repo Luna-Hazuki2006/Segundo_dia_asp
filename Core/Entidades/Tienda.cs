@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.ObjectModel;
 
 namespace Core.Entidades
 {
@@ -9,5 +10,9 @@ namespace Core.Entidades
         public List<double>? Precios {get; set;}
         public List<int>? Stock {get; set;}
         public double Dinero_Tienda {get; set;}
+
+        public Tienda() {
+            Inventario_Tienda = new Collection<Objeto>();
+        }
     }
 }

@@ -7,5 +7,6 @@ namespace Core.Entidades
         public string? Descripcion {get; set;}
         public string? Tipo {get; set;}
         public double Valor {get; set;}
+        public virtual ICollection<Inventario>? Inventarios {get; set;}
     }
 }

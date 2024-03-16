@@ -10,8 +10,8 @@ namespace Core.Entidades
     {
         public int Id {get; set;}
         public double Experiencia {get; set;}
-        public ICollection<Objeto>? Objetos {get; set;}
-        public ICollection<Enemigo>? Enemigos {get; set;}
+        public virtual ICollection<Objeto>? Objetos {get; set;}
+        public virtual ICollection<Enemigo>? Enemigos {get; set;}
         public int Monedas {get; set;}
 
         public Recompensa() {

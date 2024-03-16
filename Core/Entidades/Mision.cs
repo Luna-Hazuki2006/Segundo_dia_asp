@@ -8,8 +8,9 @@ namespace Core.Entidades
     {
         public int Id {get; set;}
         public string? Nombre {get; set;}
-        public ICollection<Objetivo>? Objetivos {get; set;}
-        public ICollection<Recompensa>? Recompensas {get; set;}
+        public string? Descripcion {get; set;}
+        public virtual ICollection<Objetivo>? Objetivos {get; set;}
+        public virtual ICollection<Recompensa>? Recompensas {get; set;}
         public string? Estado {get; set;}
 
         public Mision() {

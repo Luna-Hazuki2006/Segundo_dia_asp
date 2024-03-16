@@ -18,6 +18,10 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Objetos).IsRequired();
             builder.Property(x => x.Peso_Total).IsRequired();
             builder.ToTable("InventariosAna");
+
+            builder.HasMany(x => x.Objetos).
+                WithMany(x => x.Inventarios).
+                UsingEntity("Inventarios_ObjetosAna");
         }
     }
 }
