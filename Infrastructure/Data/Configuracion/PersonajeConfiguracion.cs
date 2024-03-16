@@ -16,6 +16,7 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.Nombre).IsRequired().HasMaxLength(255);
             builder.Property(x => x.Nivel).IsRequired();
+            builder.Property(x => x.Tipo_Id).IsRequired();
             builder.Property(x => x.Salud).IsRequired();
             builder.Property(x => x.Fuerza).IsRequired();
             builder.Property(x => x.Agilidad).IsRequired();
@@ -25,9 +26,14 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Defensa).IsRequired();
             builder.Property(x => x.Resistencia).IsRequired();
             builder.Property(x => x.Experiencia).IsRequired();
+
             builder.HasOne(x => x.Inventario).
                 WithOne(x => x.Personaje).
                 HasForeignKey<Personaje>(x => x.Inventario_Id);
+
+            builder.HasOne(x => x.Tipo).
+                WithMany().
+                HasForeignKey(x => x.Tipo_Id);
             builder.ToTable("PersonajesAna");
         }
     }
