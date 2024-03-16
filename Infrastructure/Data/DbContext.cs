@@ -35,9 +35,9 @@ namespace Infrastructure.Data
             // builder.ApplyConfiguration(new InventarioConfiguracion());
             // builder.ApplyConfiguration(new EnemigoConfiguracion());
             // builder.ApplyConfiguration(new BancoConfiguracion());
-            // builder.ApplyConfiguration(new ObjetivoRepositorio());
-            // builder.ApplyConfiguration(new RecompensaRepositorio());
-            // builder.ApplyConfiguration(new Tipo_PersonajeRepositorio());
+            // builder.ApplyConfiguration(new ObjetivoConfiguracion());
+            // builder.ApplyConfiguration(new RecompensaConfiguracion());
+            // builder.ApplyConfiguration(new Tipo_PersonajeConfiguracion());
             builder.ApplyConfiguration(new UsuarioConfiguracion());
             builder.ApplyConfiguration(new SesionConfiguracion());
         }

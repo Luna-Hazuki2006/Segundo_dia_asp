@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Data.Configuracion
 {
-    public class RecompensaRepositorio : IEntityTypeConfiguration<Recompensa>
+    public class RecompensaConfiguracion : IEntityTypeConfiguration<Recompensa>
     {
         public void Configure(EntityTypeBuilder<Recompensa> builder)
         {

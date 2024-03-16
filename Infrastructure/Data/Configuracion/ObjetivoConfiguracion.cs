@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Data.Configuracion
 {
-    public class ObjetivoRepositorio : IEntityTypeConfiguration<Objetivo>
+    public class ObjetivoConfiguracion : IEntityTypeConfiguration<Objetivo>
     {
         public void Configure(EntityTypeBuilder<Objetivo> builder)
         {

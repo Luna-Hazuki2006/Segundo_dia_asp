@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Data.Configuracion
 {
-    public class Tipo_PersonajeRepositorio : IEntityTypeConfiguration<Tipo_Personaje>
+    public class Tipo_PersonajeConfiguracion : IEntityTypeConfiguration<Tipo_Personaje>
     {
         public void Configure(EntityTypeBuilder<Tipo_Personaje> builder)
         {
