@@ -6,7 +6,7 @@ namespace Core.Entidades
         public string? Nombre {get; set;}
         public int Nivel_Amenaza {get; set;}
         public double Vida {get; set;}
-        public List<string>? Recompensas {get; set;}
+        public virtual ICollection<Recompensa>? Recompensas {get; set;}
         public List<string>? Habilidades {get; set;}
     }
 }

@@ -14,11 +14,13 @@ namespace Infrastructure.Data.Configuracion
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn();
-            builder.Property(x => x.Objetos).IsRequired();
             builder.Property(x => x.Experiencia).IsRequired();
-            builder.Property(x => x.Enemigos).IsRequired();
             builder.Property(x => x.Monedas).IsRequired();
             builder.ToTable("RecompensasAna");
+
+            builder.HasMany(x => x.Objetos).
+                WithMany(x => x.Recompensas).
+                UsingEntity("Recompensas_ObjetosAna");
         }
     }
 }

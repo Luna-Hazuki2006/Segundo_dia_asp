@@ -19,6 +19,10 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Stock).IsRequired();
             builder.Property(x => x.Dinero_Tienda).IsRequired();
             builder.ToTable("TiendasAna");
+
+            builder.HasMany(x => x.Inventario_Tienda).
+                WithMany(x => x.Tiendas_Encontradas).
+                UsingEntity("Tiendas_ObjetosAna");
         }
     }
 }

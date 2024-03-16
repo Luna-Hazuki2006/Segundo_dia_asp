@@ -14,7 +14,7 @@ namespace Core.Entidades
         public string? Correo {get; set;}
         public string? Contraseña {get; set;}
         public DateTime Nacimiento {get; set;}
-        public string? Género {get; set;}
+        public string? Genero {get; set;}
 
     }
 }

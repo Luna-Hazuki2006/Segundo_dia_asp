@@ -20,7 +20,7 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Correo).HasMaxLength(225).IsRequired();
             builder.Property(x => x.Contraseña).HasMaxLength(225).IsRequired();
             builder.Property(x => x.Nacimiento).IsRequired();
-            builder.Property(x => x.Género).HasMaxLength(225);
+            builder.Property(x => x.Genero).HasMaxLength(225);
             builder.ToTable("UsuarioAna");
         }
     }

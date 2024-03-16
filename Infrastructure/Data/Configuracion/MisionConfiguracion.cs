@@ -19,7 +19,13 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Estado).IsRequired();
             builder.ToTable("MisionesAna");
 
+            builder.HasMany(x => x.Objetivos).
+                WithMany(x => x.Misiones).
+                UsingEntity("Objetivos_MisionesAna");
             
+            builder.HasMany(x => x.Recompensas).
+                WithMany(x => x.Misiones).
+                UsingEntity("Recompensas_MisionesAna");
         }
     }
 }

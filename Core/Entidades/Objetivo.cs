@@ -11,5 +11,6 @@ namespace Core.Entidades
         public string? Nombre {get; set;}
         public string? Descripcion {get; set;}
         public bool Hecho {get; set;}
+        public virtual ICollection<Mision>? Misiones {get; set;}
     }
 }

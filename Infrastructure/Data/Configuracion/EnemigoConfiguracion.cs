@@ -16,10 +16,13 @@ namespace Infrastructure.Data.Configuracion
             builder.Property(x => x.Id).UseIdentityColumn();
             builder.Property(x => x.Nombre).IsRequired().HasMaxLength(255);
             builder.Property(x => x.Nivel_Amenaza).IsRequired();
-            builder.Property(x => x.Recompensas).IsRequired();
             builder.Property(x => x.Habilidades).IsRequired();
             builder.Property(x => x.Vida).IsRequired();
             builder.ToTable("EnemigosAna");
+
+            builder.HasMany(x => x.Recompensas).
+                WithMany(x => x.Enemigos).
+                UsingEntity("Recompensas_EnemigosAna");
         }
     }
 }
