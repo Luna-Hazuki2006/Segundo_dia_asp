@@ -15,19 +15,38 @@ namespace Services.Services
         public UsuarioServicios(IUnitOfWork unitOfWork) {
             _unitOfWork = unitOfWork;
         }
-        public Task<Usuario> ActualizarDatos(string cedula, Usuario usuario)
+        public async Task<Usuario> ActualizarDatos(string cedula, Usuario usuario)
         {
-            throw new NotImplementedException();
+            UsuarioValidacion validaciones = new();
+            var validationResult = await validaciones.ValidateAsync(usuario);
+            if (validationResult.IsValid)
+            {
+                var muchos = await _unitOfWork.UsuarioRepositorio.GetAllAsync();
+                if (muchos.Any(x => x.Cedula == cedula))
+                {
+                    await _unitOfWork.UsuarioRepositorio.Update(usuario);
+                    await _unitOfWork.CommitAsync();
+                } else throw new ArgumentException("No se pudo actualizar los datos");
+            } else
+            {
+                throw new ArgumentException(validationResult.Errors.ToString());
+            }
+
+            return usuario;
         }
 
-        public Task<Usuario> Consultar(string cedula)
+        public async Task<Usuario> Consultar(string cedula)
         {
-            throw new NotImplementedException();
+            var muchos = await _unitOfWork.UsuarioRepositorio.GetAllAsync();
+            var usuario = 
+                muchos.FirstOrDefault(x => x.Cedula == cedula) ?? 
+                throw new ArgumentException("No se pudo encontrar el usuario");
+            return usuario;
         }
 
-        public Task<IEnumerable<Usuario>> Listar()
+        public async Task<IEnumerable<Usuario>> Listar()
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.UsuarioRepositorio.GetAllAsync();
         }
 
         public async Task<Usuario> Registrar(Usuario usuario)
@@ -37,8 +56,12 @@ namespace Services.Services
             var validationResult = await validator.ValidateAsync(usuario);
             if (validationResult.IsValid)
             {
-                await _unitOfWork.UsuarioRepositorio.AddAsync(usuario);
-                await _unitOfWork.CommitAsync();
+                var muchos = await _unitOfWork.UsuarioRepositorio.GetAllAsync();
+                if (!muchos.Any(x => x.Cedula == usuario.Cedula))
+                {
+                    await _unitOfWork.UsuarioRepositorio.AddAsync(usuario);
+                    await _unitOfWork.CommitAsync();
+                } else throw new ArgumentException("La cédula no puede estar repetida");
             }
             else
             {
