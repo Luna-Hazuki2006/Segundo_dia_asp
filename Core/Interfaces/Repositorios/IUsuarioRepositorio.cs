@@ -8,6 +8,6 @@ namespace Core.Interfaces.Repositorios
 {
     public interface IUsuarioRepositorio : IBaseRepositorio<Usuario>
     {
-        
+        ValueTask<Usuario> GetByIdAsync(string cedula);
     }
 }

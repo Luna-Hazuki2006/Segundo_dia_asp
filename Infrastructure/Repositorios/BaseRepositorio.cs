@@ -24,7 +24,7 @@ namespace Infrastructure.Repositorios
             return await dbSet.FindAsync(id);
         }
 
-        public virtual async ValueTask<TEntity> GetByIdAsync(int id, string nombre)
+        public virtual async ValueTask<TEntity> GetByIdAsync(string id)
         {
             return await dbSet.FindAsync(id);
         }

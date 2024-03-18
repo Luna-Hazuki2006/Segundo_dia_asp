@@ -5,24 +5,26 @@ using System.Threading.Tasks;
 using Core.Entidades;
 using Core.Interfaces.Repositorios;
 using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositorios
 {
-    public class UsuarioRepositorio : BaseRepositorio<Sesion>, IUsuarioRepositorio
+    public class UsuarioRepositorio : BaseRepositorio<Usuario>, IUsuarioRepositorio
     {
         public UsuarioRepositorio(AppDbContext context) : base(context)
         {
-
+            Context = context;
         }
 
-        public Task AddAsync(Usuario entidad)
+        public async Task<Usuario> AddAsync(Usuario entidad)
         {
-            throw new NotImplementedException();
+            await dbSet.AddAsync(entidad);
+            return entidad;
         }
 
         public void Remove(Usuario entidad)
         {
-            throw new NotImplementedException();
+            dbSet.Remove(entidad);
         }
 
         public void RemoveRange(IEnumerable<Usuario> entidades)
@@ -30,19 +32,23 @@ namespace Infrastructure.Repositorios
             throw new NotImplementedException();
         }
 
-        public Task Update(Usuario entidad)
+        public async Task<Usuario> Update(Usuario entidad)
         {
-            throw new NotImplementedException();
+            dbSet.Update(entidad);
+            return entidad;
+
         }
 
-        Task<IEnumerable<Usuario>> IBaseRepositorio<Usuario>.GetAllAsync()
+        async Task<IEnumerable<Usuario>> IBaseRepositorio<Usuario>.GetAllAsync()
         {
-            throw new NotImplementedException();
+            var todos = await dbSet.ToListAsync();
+            return todos;
         }
 
-        ValueTask<Usuario> IBaseRepositorio<Usuario>.GetByIdAsync(int id)
+        async ValueTask<Usuario> IUsuarioRepositorio.GetByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            var valor = await dbSet.FindAsync(id);
+            return valor;
         }
     }
 }
