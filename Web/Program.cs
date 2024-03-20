@@ -69,12 +69,7 @@ builder.Services.AddScoped(typeof(IUsuarioService), typeof(UsuarioServicios));
 builder.Services.AddScoped(typeof(ISesionRepositorio), typeof(SesionRepositorio));
 builder.Services.AddScoped(typeof(ISesionService), typeof(SesionServicios));
 
-/*builder.Services.AddDbContext<AppDbContext>(options => 
-                    options.UseNpgsql("Host=dpg-clupqhmg1b2c73cacl4g-a;Server=dpg-clupqhmg1b2c73cacl4g-a.oregon-postgres.render.com;Port=5432;Database=gracoapidb;Username=graco;Password=d16mVIlilx3OFVzXgb0AW5VYnTOv0pMT"
-                     ,b => b.MigrationsAssembly("Infrastructure")
-                )
-                    
-            );*/
+
 builder.Services.AddDbContext<AppDbContext>(options => 
                     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
             );

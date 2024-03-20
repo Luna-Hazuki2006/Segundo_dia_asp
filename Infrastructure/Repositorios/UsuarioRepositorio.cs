@@ -36,7 +36,6 @@ namespace Infrastructure.Repositorios
         {
             dbSet.Update(entidad);
             return entidad;
-
         }
 
         async Task<IEnumerable<Usuario>> IBaseRepositorio<Usuario>.GetAllAsync()
