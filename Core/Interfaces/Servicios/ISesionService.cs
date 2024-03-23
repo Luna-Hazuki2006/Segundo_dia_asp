@@ -9,6 +9,7 @@ namespace Core.Interfaces.Servicios
     public interface ISesionService
     {
         Task<Sesion> Iniciar_Sesion(string cedula, string contraseña);
-        Task Cerrar_Sesion(Sesion sesion);
+        string Cerrar_Sesion(Sesion sesion);
+        string Validar(string cedula, string token);
     }
 }
