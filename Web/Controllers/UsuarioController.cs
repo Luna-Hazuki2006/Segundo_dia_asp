@@ -90,12 +90,12 @@ namespace Web.Controllers
         /// }
         /// </remarks>
         [HttpPost]
-        public async Task<ActionResult<Usuario>> Post([FromBody] Usuario Usuario)
+        public async Task<ActionResult<Usuario>> Post([FromBody] Usuario usuario)
         {
             try
             {
                 var createdUsuario =
-                    await _servicio.Registrar(Usuario);
+                    await _servicio.Registrar(usuario);
 
                 return Ok(createdUsuario);
             }
