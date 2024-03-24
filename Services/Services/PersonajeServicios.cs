@@ -37,8 +37,8 @@ namespace Services.Services
 
         public async Task DeletePersonaje(int PersonajeId)
         {
-            Personaje Personaje = await _unitOfWork.PersonajeRepositorio.GetByIdAsync(PersonajeId);
-            _unitOfWork.PersonajeRepositorio.Remove(Personaje);
+            Personaje personaje = await _unitOfWork.PersonajeRepositorio.GetByIdAsync(PersonajeId);
+            _unitOfWork.PersonajeRepositorio.Remove(personaje);
             await _unitOfWork.CommitAsync();
         }
 

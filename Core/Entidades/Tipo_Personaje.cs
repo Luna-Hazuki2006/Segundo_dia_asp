@@ -11,11 +11,11 @@ namespace Core.Entidades
         public int Id {get; set;}
         public string? Nombre {get; set;}
         public string? Descripcion {get; set;}
-        public virtual ICollection<Personaje>? Personajes {get; set;}
+        // public virtual ICollection<Personaje>? Personajes {get; set;}
 
         public Tipo_Personaje() {
             Descripcion = "";
-            Personajes = new Collection<Personaje>();
+            // Personajes = new Collection<Personaje>();
         }
     }
 }

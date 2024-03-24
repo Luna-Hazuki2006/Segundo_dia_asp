@@ -13,7 +13,7 @@ namespace Services.validators
             RuleFor(x => x.Id).
                 NotNull(). 
                 GreaterThanOrEqualTo(1);
-            RuleFor(x => x.Nombre);
+            RuleFor(x => x.Nombre).NotEmpty();
             RuleFor(x => x.Descripcion);
         }
     }

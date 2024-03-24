@@ -81,6 +81,7 @@ namespace Web.Controllers
             {
                 var createdTipo_Personaje =
                     await _servicio.CreateTipo_Personaje(Tipo_Personaje);
+                Console.WriteLine(createdTipo_Personaje);
 
                 return Ok(createdTipo_Personaje);
             }
