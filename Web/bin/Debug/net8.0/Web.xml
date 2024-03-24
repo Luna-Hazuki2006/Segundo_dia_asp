@@ -596,6 +596,29 @@
             }
             </remarks>
         </member>
+        <member name="M:Web.Controllers.SesionController.Post(System.String,System.String)">
+            <summary>
+            Método para creación de una sesion
+            </summary>
+            <param name="cedula">La cedula del usuario</param>
+            <param name="contraseña">La contraseña del usuario</param>
+            <returns>Objeto de la nueva sesion</returns>
+            <remarks>
+            Ejemplo de un Json request
+            {
+                "Id": 0, 
+                "Token": "adsd.sdfsdf.aerere", 
+                "Cedula_usuario": "12232332", 
+            }
+            </remarks>
+        </member>
+        <member name="M:Web.Controllers.SesionController.Delete(Core.Entidades.Sesion)">
+            <summary>
+            Método para cerrar una sesión y borrarla
+            </summary>
+            <param name="sesion">El objeto de la sesion</param>
+            <returns>Una cadena vacía</returns>
+        </member>
         <!-- Badly formed XML comment ignored for member "M:Web.Controllers.TiendaController.Get" -->
         <member name="M:Web.Controllers.TiendaController.Get(System.Int32)">
             <summary>

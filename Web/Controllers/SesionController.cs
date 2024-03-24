@@ -19,74 +19,17 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// Método para devolver todos los usuarios
+        /// Método para creación de una sesion
         /// </summary>
-        /// <returns>Una lista de objetos de usuarios</returns>
-        /// <remarks>
-        /// Ejemplo de lista devuelta 
-        /// [
-        ///     {
-        ///         "Cedula": "1323343", 
-        ///         "Nombres": "string", 
-        ///         "Apellidos": "string", 
-        ///         "Apodo": "string", 
-        ///         "Correo": "string", 
-        ///         "Contraseña": "string", 
-        ///         "Nacimiento": 2021-03-23, 
-        ///         "Género": "string", 
-        ///     }
-        /// ]
-        /// </remarks>
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Usuario>>> Get(){
-
-            var Usuarios = await _servicio.Listar();
-
-            return Ok(Usuarios);
-        }
-        
-        /// <summary>
-        /// Método para obtener un Usuario
-        /// </summary>
-        /// <param name="Cedula">La cedula del Usuario</param>
-        /// <returns>Objeto de Usuario</returns>
-        /// <remarks>
-        /// Ejemplo de objeto devuelto 
-        /// {
-        ///     "Cedula": "1323343", 
-        ///     "Nombres": "string", 
-        ///     "Apellidos": "string", 
-        ///     "Apodo": "string", 
-        ///     "Correo": "string", 
-        ///     "Contraseña": "string", 
-        ///     "Nacimiento": 2021-03-23, 
-        ///     "Género": "string", 
-        /// }
-        /// </remarks>
-        [HttpGet("{Cedula}")]
-        public async Task<ActionResult<IEnumerable<Usuario>>> Get(string Cedula){
-
-            var Usuarios = await _servicio.Consultar(Cedula);
-
-            return Ok(Usuarios);
-        }
-
-        /// <summary>
-        /// Método para creación de un Usuario
-        /// </summary>
-        /// <param name="Sesion">La instancia de la clase Usuario</param>
-        /// <returns>Objeto del nuevo Usuario</returns>
+        /// <param name="cedula">La cedula del usuario</param>
+        /// <param name="contraseña">La contraseña del usuario</param>
+        /// <returns>Objeto de la nueva sesion</returns>
         /// <remarks>
         /// Ejemplo de un Json request
         /// {
-        ///     "Cedula": "1323343", 
-        ///     "Nombres": "string", 
-        ///     "Apellidos": "string", 
-        ///     "Apodo": "string", 
-        ///     "Correo": "string", 
-        ///     "Contraseña": "string", 
-        ///     "Nacimiento": 2021-03-23, 
-        ///     "Género": "string", 
+        ///     "Id": 0, 
+        ///     "Token": "adsd.sdfsdf.aerere", 
+        ///     "Cedula_usuario": "12232332", 
         /// }
         /// </remarks>
         [HttpPost]
@@ -106,43 +49,21 @@ namespace Web.Controllers
         }
 
         /// <summary>
-        /// Método para modificar un Usuario
+        /// Método para cerrar una sesión y borrarla
         /// </summary>
-        /// <param name="Cedula">Es la cedula del Usuario a modificar</param>
-        /// <param name="Usuario">Es el objeto del Usuario modificado</param>
-        /// <returns>El Usuario modificado</returns>
-        /// <remarks>
-        /// Ejemplo de un Usuario devuelto
-        /// {
-        ///     "Cedula": "1323343", 
-        ///     "Nombres": "string", 
-        ///     "Apellidos": "string", 
-        ///     "Apodo": "string", 
-        ///     "Correo": "string", 
-        ///     "Contraseña": "string", 
-        ///     "Nacimiento": 2021-03-23, 
-        ///     "Género": "string", 
-        /// }
-        /// </remarks>
-        [HttpPut("{Cedula}")]
-        public async Task<ActionResult<Usuario>> Put(string Cedula, [FromBody] Usuario Usuario)
-        {
+        /// <param name="sesion">El objeto de la sesion</param>
+        /// <returns>Una cadena vacía</returns>
+        [HttpDelete]
+        public async Task<ActionResult<string>> Delete([FromBody] Sesion sesion) {
             try
             {
-                var updatedUsuario =
-                    await _servicio.ActualizarDatos(Cedula, Usuario);
-
-                return Ok(updatedUsuario);
+                _servicio.Cerrar_Sesion(sesion);
+                return Ok("");
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
-        }
-
-        [HttpDelete]
-        public async Task<string> Delete() {
-            
         }
     }
 }
