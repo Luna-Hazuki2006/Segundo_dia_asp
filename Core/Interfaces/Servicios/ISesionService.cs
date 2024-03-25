@@ -10,6 +10,6 @@ namespace Core.Interfaces.Servicios
     {
         Task<Sesion> Iniciar_Sesion(string cedula, string contraseña);
         string Cerrar_Sesion(Sesion sesion);
-        string Validar(string cedula, string token);
+        bool Validar(string token);
     }
 }

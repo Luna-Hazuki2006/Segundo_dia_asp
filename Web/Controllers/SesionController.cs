@@ -32,15 +32,35 @@ namespace Web.Controllers
         ///     "Cedula_usuario": "12232332", 
         /// }
         /// </remarks>
-        [HttpPost]
-        public async Task<ActionResult<Sesion>> Post([FromBody] string cedula, string contraseña)
+        [HttpPost("/create")]
+        public async Task<ActionResult<Sesion>> Post([FromBody] Usuario usuario)
         {
             try
             {
                 var sesionCreada =
-                    await _servicio.Iniciar_Sesion(cedula, contraseña);
+                    await _servicio.Iniciar_Sesion(usuario.Cedula, usuario.Contraseña);
 
                 return Ok(sesionCreada);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Este método se encarga de validar los tokens de las sesiones
+        /// </summary>
+        /// <param name="token">El token de la sesion a validar</param>
+        /// <returns>Un valor booleano indicando si es valido o no</returns>
+        [HttpPost("/validate")]
+        public async Task<ActionResult<bool>> Post([FromBody] string token)
+        {
+            try
+            {
+                var resultado = _servicio.Validar(token);
+
+                return Ok(resultado);
             }
             catch (Exception ex)
             {
@@ -53,7 +73,7 @@ namespace Web.Controllers
         /// </summary>
         /// <param name="sesion">El objeto de la sesion</param>
         /// <returns>Una cadena vacía</returns>
-        [HttpDelete]
+        [HttpDelete("/logout")]
         public async Task<ActionResult<string>> Delete([FromBody] Sesion sesion) {
             try
             {

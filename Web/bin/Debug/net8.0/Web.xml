@@ -596,7 +596,7 @@
             }
             </remarks>
         </member>
-        <member name="M:Web.Controllers.SesionController.Post(System.String,System.String)">
+        <member name="M:Web.Controllers.SesionController.Post(Core.Entidades.Usuario)">
             <summary>
             Método para creación de una sesion
             </summary>
@@ -611,6 +611,13 @@
                 "Cedula_usuario": "12232332", 
             }
             </remarks>
+        </member>
+        <member name="M:Web.Controllers.SesionController.Post(System.String)">
+            <summary>
+            Este método se encarga de validar los tokens de las sesiones
+            </summary>
+            <param name="token">El token de la sesion a validar</param>
+            <returns>Un valor booleano indicando si es valido o no</returns>
         </member>
         <member name="M:Web.Controllers.SesionController.Delete(Core.Entidades.Sesion)">
             <summary>

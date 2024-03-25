@@ -10,6 +10,7 @@ using Core.Interfaces.Servicios;
 using Services.validators;
 using Core.Interfaces;
 using System.Text;
+using System.Security.Principal;
 
 namespace Services.Services
 {
@@ -26,6 +27,9 @@ namespace Services.Services
             _unitOfWork.SesionRepositorio.Remove(sesion);
             return "";
         }
+        public byte[] key() {
+            return Encoding.ASCII.GetBytes("f645b33ef0d04cbe859777ac6f46226d");
+        }
 
         public async Task<Sesion> Iniciar_Sesion(string cedula, string contraseña)
         {
@@ -35,7 +39,6 @@ namespace Services.Services
                 Usuario usuario = await _unitOfWork.UsuarioRepositorio.GetByIdAsync(cedula);
                 if (usuario == null) return null;
                 var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes("c2c3111663e00afe901d9c00ab169d36");
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new Claim[]
@@ -45,7 +48,7 @@ namespace Services.Services
                         new Claim("cedula", usuario.Cedula)
                     }),
                     Expires = DateTime.UtcNow.AddMinutes(15),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key()), SecurityAlgorithms.HmacSha256Signature)
                 };
                 var token = tokenHandler.CreateToken(tokenDescriptor);
                 string tokenFinal = tokenHandler.WriteToken(token);
@@ -60,9 +63,27 @@ namespace Services.Services
 
         }
 
-        public string Validar(string cedula, string token)
+        public bool Validar(string token)
         {
-            throw new NotImplementedException();
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var validationParameters = GetValidationParameters();
+
+            SecurityToken validatedToken;
+            // I am sorry if this isn't how it works (´。＿。｀)
+            IPrincipal principal = tokenHandler.ValidateToken(token, validationParameters, out validatedToken);
+            if (validatedToken.ValidTo < DateTime.UtcNow.AddMinutes(15)) return true;
+            return false;
+        }
+
+        private TokenValidationParameters GetValidationParameters()
+        {
+            return new TokenValidationParameters()
+            {
+                ValidateLifetime = true, 
+                ValidateAudience = false, 
+                ValidateIssuer = false, 
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("f645b33ef0d04cbe859777ac6f46226d")) // por favor que asi sea
+            };
         }
     }
 }

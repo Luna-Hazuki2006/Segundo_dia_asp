@@ -63,7 +63,7 @@ namespace Web.Controllers
         ///     "Género": "string", 
         /// }
         /// </remarks>
-        [HttpGet("{Cedula}")]
+        [HttpGet("update/{Cedula}")]
         public async Task<ActionResult<IEnumerable<Usuario>>> Get(string Cedula){
 
             var Usuarios = await _servicio.Consultar(Cedula);
@@ -89,7 +89,7 @@ namespace Web.Controllers
         ///     "Género": "string", 
         /// }
         /// </remarks>
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<ActionResult<Usuario>> Post([FromBody] Usuario usuario)
         {
             try
